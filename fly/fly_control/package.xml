@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>fly_control</name>
+  <version>0.0.0</version>
+  <description>The fly_control package</description>
+
+
+  <maintainer email="ahmet@todo.todo">ahmet</maintainer>
+
+
+  <license>TODO</license>
+
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>libmavconn</depend>
+  <depend>mavros</depend>
+  <depend>mavros_msgs</depend>
+  <depend>roscpp</depend>
+  <depend>std_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>fly_msgs</depend>
+
+  
+
+
+  <export>
+
+
+  </export>
+</package>

@@ -1,0 +1,16 @@
+rover:
+  look_ahead_distance: 2
+  cruise_velocity: 0.7
+  P_gain_direction: 0.5
+  D_gain_direction: -0.1
+  mission_reach_treshold: 0.5
+  vehicle_width: 0.5
+
+drone:
+  cruise_height: 10
+  max_distance_to_path: 30
+
+camera_parameters:
+  camera_vertical_fov: 0.85172067497
+  camera_horizontal_fov: 1.0855947947
+  overlap: 0.5

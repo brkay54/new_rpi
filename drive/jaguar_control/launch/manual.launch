@@ -1,0 +1,24 @@
+<launch>
+
+    <include file="$(find mavros)/launch/px4.launch">
+    <arg name="fcu_url" value="/dev/serial/by-id/usb-3D_Robotics_PX4_FMU_v2.x_0-if00"/>
+
+    <rosparam command="load" file="$(find jaguar_control)/config/rover_parameters.yaml"  />
+
+    <group>
+        <remap from='joy' to='j0'/>
+        <node pkg='joy' name='joy0' type='joy_node'>
+            <param name='dev' type='string' value='/dev/input/js0'/>
+            <param name='autorepeat_rate' type='double' value='50'/>
+
+        </node>
+    </group>
+
+    <node pkg="drrobot_jaguarV2_player" name="drrobot_jaguarv2_player_node" type="drrobot_jaguarv2_player_node" respawn="true" output="screen"/>
+    <node pkg="jaguar_control" name="manual_controller" type="manual_controller" respawn="true" output="screen"/>
+
+
+
+
+
+</launch>

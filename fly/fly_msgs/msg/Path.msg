@@ -1,0 +1,4 @@
+geometry_msgs/Point point_begin
+geometry_msgs/Point point_end
+geometry_msgs/Point point_center
+uint8 type

@@ -1,0 +1,22 @@
+simulation : 1
+drone:
+  look_ahead_distance: 3
+  cruise_velocity: 3
+  cruise_height: 10
+  Pz_gain: 0.8
+  Dz_gain: -0.05
+  Pa_gain: 4
+  Da_gain: -0.05
+  Pp_gain: 1
+  Dp_gain: 0.01
+  Ip_gain: 0.05
+  descent_rate: 0.5
+  max_position_control_velocity: 5
+  integration_limit: 10
+  max_distance_to_path: 30
+
+
+camera_parameters:
+ camera_vertical_fov: 0.85172067497
+ camera_horizontal_fov: 1.0855947947
+ overlap: 0.5
