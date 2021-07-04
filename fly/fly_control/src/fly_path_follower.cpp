@@ -75,10 +75,40 @@ void global_position_cb(const sensor_msgs::NavSatFix::ConstPtr &msg) {
 
 }
 
-fiducial_msgs::FiducialTransformArray aruco_transform;
+geometry_msgs::Point euler;
+geometry_msgs::Point rotate_point (geometry_msgs::Point point ){
+
+    euler = commons::toEulerAngle(vehicle_pose.pose.orientation);
+
+    geometry_msgs::Point output;
+
+    double cx=cos(euler.x);
+    double sx=sin(euler.x);
+    double cy=cos(euler.y);
+    double sy=sin(euler.y);
+    double cz=cos(euler.z);
+    double sz=sin(euler.y);
+
+    output.x = point.x * (cz*cy) + point.y * (cz*sy*sx - sz*cx) + point.z * (cz*sy*cx + sz*sx);
+    output.y = point.x * (sz*cy) + point.y * (sz*sy*sx + cz*cx) + point.z * (sz*sy*cx - cz*sx);
+    output.z = point.x * (-sy) + point.y * (cy*sx) + point.z * (cy*cx);
+
+    return output;
+}
+geometry_msgs::Point camera_relative;
+bool rover_seen = false;
 
 void arucoCallback(fiducial_msgs::FiducialTransformArray_<std::allocator<void>> msg) {
-    aruco_transform = msg;
+    if(msg.transforms.size() !=0){
+
+        rover_seen = true;
+        camera_relative.x = msg.transforms[0].transform.translation.x;
+        camera_relative.y = -msg.transforms[0].transform.translation.y;
+        camera_relative.z = -msg.transforms[0].transform.translation.z;
+
+
+        rover_pose = rotate_point(camera_relative);
+    }
 }
 
 
@@ -413,6 +443,23 @@ int main(int argc, char **argv) {
         segment_pub.publish(pub_segment); //publish current segment of the path to inform other nodes/vehicles
         final_point_pub.publish(final_point);  //publish end of the path to inform rover.
         ros::spinOnce();
+        rate.sleep();
+
+    }
+
+    geometry_msgs::PoseStamped wait_p;
+    wait_p = vehicle_pose;
+
+    while(ros::ok() && !rover_seen){
+        ROS_INFO("Waiting to detect rover");
+
+        pub_segment.index = -7;  //wainting for rover
+        segment_pub.publish(pub_segment); //publish current segment of the path to inform other nodes/vehicle
+
+        local_pos_pub.publish(wait_p);
+        final_point_pub.publish(final_point);
+
+        ros::spinOnce;
         rate.sleep();
 
     }
