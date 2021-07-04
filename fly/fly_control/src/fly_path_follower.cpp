@@ -82,12 +82,12 @@ geometry_msgs::Point rotate_point (geometry_msgs::Point point ){
 
     geometry_msgs::Point output;
 
-    double cx=cos(euler.x);
-    double sx=sin(euler.x);
-    double cy=cos(euler.y);
-    double sy=sin(euler.y);
-    double cz=cos(euler.z);
-    double sz=sin(euler.y);
+    double cx=cos(-euler.x);
+    double sx=sin(-euler.x);
+    double cy=cos(-euler.y);
+    double sy=sin(-euler.y);
+    double cz=cos(-euler.z);
+    double sz=sin(-euler.z);
 
     output.x = point.x * (cz*cy) + point.y * (cz*sy*sx - sz*cx) + point.z * (cz*sy*cx + sz*sx);
     output.y = point.x * (sz*cy) + point.y * (sz*sy*sx + cz*cx) + point.z * (sz*sy*cx - cz*sx);
