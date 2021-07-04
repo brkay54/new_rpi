@@ -89,9 +89,9 @@ geometry_msgs::Point rotate_point (geometry_msgs::Point point ){
     double cz=cos(-euler.z);
     double sz=sin(-euler.z);
 
-    output.x = point.x * (cz*cy) + point.y * (cz*sy*sx - sz*cx) + point.z * (cz*sy*cx + sz*sx);
-    output.y = point.x * (sz*cy) + point.y * (sz*sy*sx + cz*cx) + point.z * (sz*sy*cx - cz*sx);
-    output.z = point.x * (-sy) + point.y * (cy*sx) + point.z * (cy*cx);
+    output.x = point.x * (cz*cy) + point.y * (cz*sy*sx - sz*cx) + point.z * (cz*sy*cx + sz*sx) + vehicle_pose.pose.position.x;
+    output.y = point.x * (sz*cy) + point.y * (sz*sy*sx + cz*cx) + point.z * (sz*sy*cx - cz*sx) + vehicle_pose.pose.position.y;
+    output.z = point.x * (-sy) + point.y * (cy*sx) + point.z * (cy*cx) + vehicle_pose.pose.position.z;
 
     return output;
 }
