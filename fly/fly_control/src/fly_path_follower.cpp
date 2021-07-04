@@ -109,6 +109,9 @@ void arucoCallback(fiducial_msgs::FiducialTransformArray_<std::allocator<void>> 
 
         rover_pose = rotate_point(camera_relative);
     }
+    else{
+        rover_seen = false;
+    }
 }
 
 
