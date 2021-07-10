@@ -1,0 +1,18 @@
+<launch>
+
+    <rosparam command="load" file="$(find jaguar_control)/config/parameters.yaml"  />
+
+    <group>
+        <remap from='joy' to='j0'/>
+        <node pkg='joy' name='joy0' type='joy_node'>
+            <param name='dev' type='string' value='/dev/input/js0'/>
+            <param name='autorepeat_rate' type='double' value='50'/>
+
+        </node>
+    </group>
+
+    <node pkg="drrobot_jaguarV2_player" name="drrobot_jaguarv2_player_node" type="drrobot_jaguarv2_player_node" respawn="true" output="screen"/>
+    <node pkg="jaguar_control" name="sim_drive_path_follower" type="sim_drive_path_follower" respawn="true" output="screen"/>
+
+
+</launch>

@@ -38,6 +38,8 @@ include_directories(
 add_executable(drive_path_follower src/drive_path_follower.cpp include/commons.h include/commons.cpp include/survey_path_generator.h include/survey_path_generator.cpp include/path_segment.cpp include/path_segment.h)
 target_link_libraries(drive_path_follower ${catkin_LIBRARIES} )
 
+add_executable(sim_drive_path_follower src/sim_drive_path_follower.cpp include/commons.h include/commons.cpp include/survey_path_generator.h include/survey_path_generator.cpp include/path_segment.cpp include/path_segment.h)
+target_link_libraries(sim_drive_path_follower ${catkin_LIBRARIES} )
 
 
 

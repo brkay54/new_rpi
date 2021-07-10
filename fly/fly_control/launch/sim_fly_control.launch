@@ -1,0 +1,7 @@
+<launch>
+    <rosparam command="load" file="$(find fly_control)/config/parameters.yaml"  />
+
+    <node pkg="fly_control" name="sim_fly_path_follower" type="sim_fly_path_follower" respawn="false" output="screen"/>
+    <node pkg="fly_control" name="sim_camera_trig" type="sim_camera_trig" respawn="false" output="screen"/>
+
+</launch>

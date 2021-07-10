@@ -309,6 +309,31 @@ int main(int argc, char **argv) {
     take_off_p.pose.position.z = cruise_height;
 
 
+    for (int i = 0; i < 3*frequency; i++) {   //wait for 3 seconds before requesting offboard.
+        local_pos_pub.publish(take_off_p);
+        ros::spinOnce();
+        rate.sleep();
+    }
+
+    mavros_msgs::SetMode offb_set_mode;
+    mavros_msgs::CommandBool arm_cmd;
+    offb_set_mode.request.custom_mode = "OFFBOARD";
+    arm_cmd.request.value = true;
+
+    if (current_state.mode != "OFFBOARD") {
+        set_mode_client.call(offb_set_mode);
+        if (offb_set_mode.response.mode_sent)
+            ROS_INFO("Offboard enabled");
+        else
+            ROS_WARN("Switching to OFFBOARD failed!");
+    }
+    if (!current_state.armed) {
+        arming_client.call(arm_cmd);
+        if (arm_cmd.response.success)
+            ROS_INFO("Vehicle armed");
+        else
+            ROS_WARN("Arming failed!");
+    }
 
     //wait gps position to get accurate before generating the path.
     while (ros::ok() && !current_state.armed) {

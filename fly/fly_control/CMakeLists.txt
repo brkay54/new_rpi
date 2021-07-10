@@ -39,8 +39,15 @@ add_executable(fly_path_follower src/fly_path_follower.cpp include/commons.h inc
 target_include_directories(fly_path_follower PRIVATE ${PYTHON_INCLUDE_DIRS})
 target_link_libraries(fly_path_follower ${PYTHON_LIBRARIES} ${catkin_LIBRARIES} )
 
+add_executable(sim_fly_path_follower src/sim_fly_path_follower.cpp include/commons.h include/commons.cpp include/survey_path_generator.h include/survey_path_generator.cpp include/path_segment.cpp include/path_segment.h)
+target_include_directories(sim_fly_path_follower PRIVATE ${PYTHON_INCLUDE_DIRS})
+target_link_libraries(sim_fly_path_follower ${PYTHON_LIBRARIES} ${catkin_LIBRARIES} )
+
 add_executable(camera_trig src/camera_trig.cpp include/commons.h include/commons.cpp include/survey_path_generator.h include/survey_path_generator.cpp include/path_segment.cpp include/path_segment.h)
 target_link_libraries(camera_trig ${OpenCV_LIBS} ${catkin_LIBRARIES})
+
+add_executable(sim_camera_trig src/sim_camera_trig.cpp include/commons.h include/commons.cpp include/survey_path_generator.h include/survey_path_generator.cpp include/path_segment.cpp include/path_segment.h)
+target_link_libraries(sim_camera_trig ${OpenCV_LIBS} ${catkin_LIBRARIES})
 
 add_executable(land src/land.cpp include/commons.h include/commons.cpp include/survey_path_generator.h include/survey_path_generator.cpp include/path_segment.cpp include/path_segment.h)
 target_include_directories(land PRIVATE ${PYTHON_INCLUDE_DIRS})
