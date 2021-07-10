@@ -11,8 +11,9 @@ int main () {
 
     survey_path_generator survey;
     survey.d=5;
+    survey.read_from_file("/home/ahmet/int/src/new_rpi/fly/fly_control/config/local_coordinates.txt");
+    std::cout<<survey.Polygon.size();
 
-    survey.read_from_file();
     survey.standardize();
     survey.generate_path();
     survey.add_arcs(0);

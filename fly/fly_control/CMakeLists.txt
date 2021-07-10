@@ -53,9 +53,9 @@ add_executable(land src/land.cpp include/commons.h include/commons.cpp include/s
 target_include_directories(land PRIVATE ${PYTHON_INCLUDE_DIRS})
 target_link_libraries(land ${PYTHON_LIBRARIES} ${catkin_LIBRARIES} )
 
-#add_executable(tester src/tester.cpp include/path_plotter.cpp include/commons.h include/commons.cpp include/survey_path_generator.h include/survey_path_generator.cpp include/matplotlibcpp.h include/path_plotter.cpp include/path_plotter.h include/path_segment.cpp include/path_segment.h)
-#target_include_directories(tester PRIVATE ${PYTHON_INCLUDE_DIRS})
-#target_link_libraries(tester ${PYTHON_LIBRARIES} ${catkin_LIBRARIES} )
+add_executable(tester src/tester.cpp include/path_plotter.cpp include/commons.h include/commons.cpp include/survey_path_generator.h include/survey_path_generator.cpp include/matplotlibcpp.h include/path_plotter.cpp include/path_plotter.h include/path_segment.cpp include/path_segment.h)
+target_include_directories(tester PRIVATE ${PYTHON_INCLUDE_DIRS})
+target_link_libraries(tester ${PYTHON_LIBRARIES} ${catkin_LIBRARIES} )
 
 
 #add_executable(pose_plotter src/pose_plotter.cpp include/path_plotter.cpp include/commons.h include/commons.cpp include/survey_path_generator.h include/survey_path_generator.cpp include/matplotlibcpp.h include/path_plotter.cpp include/path_plotter.h include/path_segment.cpp include/path_segment.h)
