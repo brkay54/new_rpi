@@ -7,8 +7,11 @@
 #include "../include/commons.h"
 #include <fly_msgs/Line.h>
 #include "../include/survey_path_generator.h"
-#include <sensor_msgs//NavSatFix.h>
+#include <sensor_msgs/NavSatFix.h>
 #include <gazebo_msgs/ModelState.h>
+#include <gazebo/transport/transport.hh>
+#include <gazebo/msgs/msgs.hh>
+#include <gazebo/gazebo_client.hh>
 
 
 const double pi = 3.14159265358979;
@@ -51,7 +54,6 @@ void joy_val_cb(const sensor_msgs::Joy::ConstPtr &msg) {
     }
 
 }
-
 geometry_msgs::PoseStamped vehicle_pose;
 void local_position_cb(const geometry_msgs::PoseStamped::ConstPtr &msg) {
     vehicle_pose = *msg;
@@ -71,7 +73,7 @@ void global_position_cb(const sensor_msgs::NavSatFix::ConstPtr &msg) {
 
 }
 
-geometry_msgs::Twist line_follower(PathSegment l,
+gazebo::msgs::Twist line_follower(PathSegment l,
                                    geometry_msgs::PoseStamped vehicle_pose) {    //implements the carrot guidance algorithm. output is either thrust + angular velocity or left wheel velocity + right wheel velocity.
 
 
@@ -158,12 +160,10 @@ geometry_msgs::Twist line_follower(PathSegment l,
         }
     }
 
-
-    geometry_msgs::Twist output;
-
-    output.linear.x = (vel_right_wheel + vel_left_wheel) / 2.0;
-    output.angular.z = (vel_right_wheel - vel_left_wheel) / vehicle_width;
-
+    gazebo::msgs::Twist output;
+    output.mutable_linear()->set_x((vel_right_wheel + vel_left_wheel) / 2.0);
+;
+    output.mutable_angular()->set_z((vel_right_wheel - vel_left_wheel) / vehicle_width);
     return output;
 
 
@@ -172,20 +172,28 @@ geometry_msgs::Twist line_follower(PathSegment l,
 
 int main(int argc, char **argv) {
 
-    ros::init(argc, argv, "manual_controller");
+    ros::init(argc, argv, "sim_drive_path_follower");
     ros::NodeHandle nh;
 
     ros::Subscriber joy_val_sub = nh.subscribe<sensor_msgs::Joy>("j0", 10, joy_val_cb);
     ros::Subscriber local_position_sub = nh.subscribe<geometry_msgs::PoseStamped>
-            ("/mavros/local_position/pose", 10, local_position_cb);
+            ("/ugv/mavros/local_position/pose", 10, local_position_cb);
     ros::Subscriber body_velocity_sub = nh.subscribe<geometry_msgs::TwistStamped>
-            ("/mavros/local_position/velocity_body", 10, body_velocity_cb);
+            ("/ugv/mavros/local_position/velocity_body", 10, body_velocity_cb);
     ros::Subscriber global_position_sub = nh.subscribe<sensor_msgs::NavSatFix>
-            ("/mavros/global_position/global", 10, global_position_cb);
-    ros::Publisher vel_pub = nh.advertise<geometry_msgs::Twist>("/drrobot_cmd_vel", 10);
-    ros::Rate rate(30.0);   //controller frequency.
+            ("/ugv/mavros/global_position/global", 10, global_position_cb);
+    ros::Rate rate(50);
 
+    gazebo::client::setup(argc, argv);
 
+    // Create Gazebo node and init
+    gazebo::transport::NodePtr node(new gazebo::transport::Node());
+    node->Init();
+    gazebo::transport::PublisherPtr pub =
+            node->Advertise<gazebo::msgs::Twist>("/gazebo/default/jaguar_0/cmd_vel_twist");
+    ROS_INFO("asd");
+    pub->WaitForConnection();
+    ROS_INFO("asd2");
     ros::param::get("camera_parameters/camera_vertical_fov", camera_vertical_fov);
     ros::param::get("camera_parameters/camera_horizontal_fov", camera_horizontal_fov);
     ros::param::get("camera_parameters/overlap", overlap);
@@ -272,20 +280,19 @@ int main(int argc, char **argv) {
     stop_line.point_end=stop_line.point_begin;
 
 
-    geometry_msgs::Twist output;
+    gazebo::msgs::Twist output;
 
     while (ros::ok()) {
         if (mode == 1) {
-
-            output.linear.x = joystick.axes[4];
-            output.angular.z = joystick.axes[3];
-            vel_pub.publish(output);
+            output.mutable_linear()->set_x(joystick.axes[4]);
+            output.mutable_angular()->set_z(joystick.axes[3]);
+            pub->Publish(output);
             ROS_INFO("Manual");
 
         } else if (mode == 2) {
 
             output = line_follower(target_line, vehicle_pose);
-            vel_pub.publish(output);
+            pub->Publish(output);
             ROS_INFO("Autonomous");
 
             if (commons::distance_between_points(commons::projection_on_line(target_line, vehicle_pose.pose.position),
@@ -298,6 +305,7 @@ int main(int argc, char **argv) {
         rate.sleep();
         ros::spinOnce();
     }
+    gazebo::client::shutdown();
 
     return 0;
 

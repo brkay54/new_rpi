@@ -11,7 +11,6 @@
         </node>
     </group>
 
-    <node pkg="drrobot_jaguarV2_player" name="drrobot_jaguarv2_player_node" type="drrobot_jaguarv2_player_node" respawn="true" output="screen"/>
     <node pkg="jaguar_control" name="sim_drive_path_follower" type="sim_drive_path_follower" respawn="true" output="screen"/>
 
 
