@@ -8,6 +8,7 @@
 #include <fly_msgs/Line.h>
 #include "../include/survey_path_generator.h"
 #include <sensor_msgs//NavSatFix.h>
+#include <gazebo_msgs/ModelState.h>
 
 
 const double pi = 3.14159265358979;
@@ -42,11 +43,11 @@ void joy_val_cb(const sensor_msgs::Joy::ConstPtr &msg) {
     a_button = joystick.buttons[0];
     y_button = joystick.buttons[3];
 
-    if (prev_y_button != y_button) {
-        mode = 2;
-    }
     if (prev_a_button != a_button) {
         mode = 1;
+    }
+    if (prev_y_button != y_button) {
+        mode = 2;
     }
 
 }

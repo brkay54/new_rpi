@@ -25,6 +25,8 @@
   <depend>tf</depend>
   <depend>roslib</depend>
   <depend>fly_msgs</depend>
+  <depend>gazebo_msgs</depend>
+
 
 
 

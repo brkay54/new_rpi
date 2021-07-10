@@ -16,6 +16,7 @@ find_package(catkin REQUIRED COMPONENTS
   mavros_msgs
   libmavconn
   nav_msgs
+  gazebo_msgs
 )
 
 
@@ -23,7 +24,7 @@ find_package(catkin REQUIRED COMPONENTS
 catkin_package(
   INCLUDE_DIRS include
   LIBRARIES jaguar_control 
-  CATKIN_DEPENDS geometry_msgs nav_msgs roscpp rospy std_msgs sensor_msgs tf roslib fly_msgs
+  CATKIN_DEPENDS geometry_msgs nav_msgs roscpp rospy std_msgs sensor_msgs tf roslib fly_msgs gazebo_msgs
 
 )
 
