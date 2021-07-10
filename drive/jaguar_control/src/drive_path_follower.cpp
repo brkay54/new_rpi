@@ -25,6 +25,8 @@ double mission_reach_treshold;
 double vehicle_width;
 double cruise_height;
 double max_distance_to_path;
+std::string coordinate_file_name;
+
 
 int mode = 0;  //1:manual, 2:autonomous
 int a_button = 0;
@@ -197,6 +199,7 @@ int main(int argc, char **argv) {
     ros::param::get("rover/vehicle_width", vehicle_width);
     ros::param::get("drone/cruise_height", cruise_height);
     ros::param::get("drone/max_distance_to_path", max_distance_to_path);
+    ros::param::get("coordinate_file_name", coordinate_file_name);
 
 
     ros::Duration(2.0).sleep();
@@ -211,13 +214,20 @@ int main(int argc, char **argv) {
 
     ROS_INFO("Generating Survey Path");
 
+    std::string address = ros::package::getPath("fly_control");
+    address = address + "/config/" + coordinate_file_name;
+
+    char file_name[1024];
+    strcpy(file_name, address.c_str());
+    ROS_INFO("reading coordinates from: %s", file_name);
+
     survey_path_generator survey;
     survey.d = (cruise_height * sin(camera_horizontal_fov / 2.0)) * (1.0 - overlap);
     //survey.d=5;
 
-    survey.read_from_file(vehicle_pose.pose.position, global_pose);
+    survey.read_from_file(file_name, vehicle_pose.pose.position, global_pose);
 
-    ROS_INFO("%d", survey.Polygon.size());
+    ROS_INFO("Number of coordinates read: %d", survey.Polygon.size());
 
     survey.standardize();
 
@@ -226,11 +236,11 @@ int main(int argc, char **argv) {
 
     }
     survey.generate_path();
-    ROS_INFO("paht generated, containing %d lines", survey.survey_points.size());
+    ROS_INFO("Path generated, containing %d lines", survey.survey_points.size());
 
     survey.add_arcs(survey.choose_side(vehicle_pose.pose.position));
 
-    ROS_INFO("arcs added, total path contains %d segments", survey.survey_points.size());
+    ROS_INFO("Arcs added, total path contains %d segments", survey.survey_points.size());
     ROS_INFO("Beginning point:   %f   %f", survey.survey_points[0].point_begin.x,
              survey.survey_points[0].point_begin.y);
 
@@ -245,20 +255,24 @@ int main(int argc, char **argv) {
     ROS_INFO("Survey path generated succesfuly, starting mission");
 
     geometry_msgs::Point target_point;
-    target_point.x = 41.0865805;
-    target_point.y = 29.0457326;
+/*   to determine a position target manually.
+    target_point.x = 41.0854138;
+    target_point.y = 29.041259;
     target_point.z = global_pose.z;
+*/
 
-    PathSegment stop_line;
+    PathSegment target_line;
+    target_line.point_begin = vehicle_pose.pose.position;
+    //target_line.point_end = commons::global_to_local(target_point, global_pose, vehicle_pose.pose.position);
+    target_line.point_end = survey.survey_points[survey.survey_points.size()-1].point_end;
+
+
+    PathSegment stop_line; //line follower stops the vehicle when 0,0,0  0,0,0 line is sent
     stop_line.point_begin.x=0;
     stop_line.point_begin.y=0;
     stop_line.point_begin.z=0;
     stop_line.point_end=stop_line.point_begin;
 
-    PathSegment target_line;
-    target_line.point_begin = vehicle_pose.pose.position;
-    target_line.point_end = commons::global_to_local(target_point, global_pose, vehicle_pose.pose.position);
-    //target_line.point_end = survey.survey_points[survey.survey_points.size()-1].point_end;
 
     geometry_msgs::Twist output;
 
@@ -277,7 +291,7 @@ int main(int argc, char **argv) {
             ROS_INFO("Autonomous");
 
             if (commons::distance_between_points(commons::projection_on_line(target_line, vehicle_pose.pose.position),
-                                                 vehicle_pose.pose.position) < mission_reach_treshold) {
+                                                 target_line.point_end) < mission_reach_treshold) {
                 target_line=stop_line;
             }
 

@@ -285,9 +285,9 @@ void survey_path_generator::generate_path() {
 
 }
 
-void survey_path_generator::read_from_file() {
+void survey_path_generator::read_from_file(std::string file_address) {
 
-    std::fstream file("/home/ahmet/integrated/src/integrated/fly/fly_control/config/coordinates.txt", std::ios_base::in);
+    std::fstream file(file_address, std::ios_base::in);
 
     geometry_msgs::Point point;
 
@@ -299,10 +299,10 @@ void survey_path_generator::read_from_file() {
 
 }
 
-void survey_path_generator::read_from_file(geometry_msgs::Point vehicle_local, geometry_msgs::Point vehicle_global) {
+void survey_path_generator::read_from_file(std::string file_address, geometry_msgs::Point vehicle_local, geometry_msgs::Point vehicle_global) {
 
 
-    std::fstream file("/home/ahmet/integrated/src/integrated/fly/fly_control/config/coordinates.txt", std::ios_base::in);
+    std::fstream file(file_address, std::ios_base::in);
 
     geometry_msgs::Point point;
     while(file >>point.x >> point.y){

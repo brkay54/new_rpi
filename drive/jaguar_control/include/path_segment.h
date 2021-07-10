@@ -14,7 +14,7 @@ public:
     geometry_msgs::Point point_end;
     geometry_msgs::Point center;
     bool turn_direction;  //1:clockwise, 0:counterclockwise
-    uint8_t type;   //1: line, else: arc
+    uint8_t type;   //1: line, 2: arc
     virtual double lenght();
     virtual geometry_msgs::Point direction();
     virtual geometry_msgs::Point direction(geometry_msgs::Point);

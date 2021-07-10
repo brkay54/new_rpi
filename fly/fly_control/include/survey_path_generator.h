@@ -25,8 +25,8 @@ public:
     std::vector <geometry_msgs::Point> Polygon;
     geometry_msgs::Point sweep_line_direction;
     double d;
-    void read_from_file();  //works if local coordinates are written in the file. Not suitable for real vehicle
-    void read_from_file(geometry_msgs::Point vehicle_local, geometry_msgs::Point vehicle_global);  //transforms global coordinates to positions in local frame of the vehicle
+    void read_from_file(std::string file_name);  //works if local coordinates are written in the file. Not suitable for real vehicles
+    void read_from_file(std::string file_name, geometry_msgs::Point vehicle_local, geometry_msgs::Point vehicle_global);  //transforms global coordinates to positions in local frame of the vehicle
     void standardize();   //looking from upside, generate_path works only if points are in clockwise order. This function orders the input
     void generate_path();  //generates survey points in local coordinates
     void add_arcs(int side);  //adds arcs to the path to connect lines

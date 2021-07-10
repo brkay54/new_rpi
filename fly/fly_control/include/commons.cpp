@@ -6,10 +6,11 @@
 const double _a_ = 6378137.0;
 const double _e2_ = 0.00669437999014;
 const double _k_ = 0.9933056199957391;
+
 const double pi = 3.14159265358979323846;
 
 
-geometry_msgs::Point commons::toEulerAngle(geometry_msgs::Quaternion q){
+geometry_msgs::Point commons::toEulerAngle(geometry_msgs::Quaternion q){  //from wikipedia
     geometry_msgs::Point euler_angles;
     // roll (x-axis rotation)
     double sinr_cosp = +2.0 * (q.w * q.x + q.y * q.z);
@@ -108,7 +109,7 @@ geometry_msgs::Point commons::global_to_local(geometry_msgs::Point target_global
     double Xv, Yv, Zv, Xt, Yt, Zt; //ecef coords
     double N;
 
-    vehicle_global.x = vehicle_global.x*pi/180.0;
+    vehicle_global.x = vehicle_global.x*pi/180.0;  //default global coordinates are in degrees. Transform them to radians.
     vehicle_global.y = vehicle_global.y*pi/180.0;
 
     target_global.x = target_global.x*pi/180;

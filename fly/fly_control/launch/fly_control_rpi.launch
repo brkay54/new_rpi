@@ -2,7 +2,7 @@
 <include file="$(find mavros)/launch/px4.launch">
 <arg name="fcu_url" value="/dev/serial0:921600" />
 </include>	
-	<rosparam command="load" file="$(find fly_control)/config/drone_parameters.yaml"  />
+	<rosparam command="load" file="$(find fly_control)/config/parameters.yaml"  />
 
 	<node pkg="fly_control" name="fly_path_follower" type="fly_path_follower" respawn="false" output="screen"/>
 	<node pkg="fly_control" name="camera_trig" type="camera_trig" respawn="false" output="screen"/>

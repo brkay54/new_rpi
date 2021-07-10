@@ -1,4 +1,0 @@
-<launch>
-    <rosparam command="load" file="$(find fly_control)/config/drone_parameters.yaml"  />
-
-</launch>

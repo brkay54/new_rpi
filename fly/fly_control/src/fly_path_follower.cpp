@@ -1,5 +1,6 @@
 
 #include <ros/ros.h>
+#include <ros/package.h>
 #include <geometry_msgs/PoseStamped.h>
 #include <geometry_msgs/TwistStamped.h>
 #include <sensor_msgs//NavSatFix.h>
@@ -38,14 +39,13 @@ double camera_vertical_fov;
 double camera_horizontal_fov;
 double overlap;
 double max_distance_to_path;
+int land_type;
+std::string coordinate_file_name;
 
 double prev_x_err, prev_y_err, x_err_integrated, y_err_integrated;
 
 int current_segment = 0;
 fly_msgs::Int pub_segment;
-
-
-geometry_msgs::Point rover_pose;
 
 
 mavros_msgs::State current_state;
@@ -76,30 +76,35 @@ void global_position_cb(const sensor_msgs::NavSatFix::ConstPtr &msg) {
 }
 
 geometry_msgs::Point euler;
-geometry_msgs::Point rotate_point (geometry_msgs::Point point ){
+
+geometry_msgs::Point rotate_point(geometry_msgs::Point point) {
 
     euler = commons::toEulerAngle(vehicle_pose.pose.orientation);
 
     geometry_msgs::Point output;
 
-    double cx=cos(-euler.x);
-    double sx=sin(-euler.x);
-    double cy=cos(-euler.y);
-    double sy=sin(-euler.y);
-    double cz=cos(-euler.z);
-    double sz=sin(-euler.z);
+    double cx = cos(-euler.x);
+    double sx = sin(-euler.x);
+    double cy = cos(-euler.y);
+    double sy = sin(-euler.y);
+    double cz = cos(-euler.z);
+    double sz = sin(-euler.z);
 
-    output.x = point.x * (cz*cy) + point.y * (cz*sy*sx - sz*cx) + point.z * (cz*sy*cx + sz*sx) + vehicle_pose.pose.position.x;
-    output.y = point.x * (sz*cy) + point.y * (sz*sy*sx + cz*cx) + point.z * (sz*sy*cx - cz*sx) + vehicle_pose.pose.position.y;
-    output.z = point.x * (-sy) + point.y * (cy*sx) + point.z * (cy*cx) + vehicle_pose.pose.position.z;
+    output.x = point.x * (cz * cy) + point.y * (cz * sy * sx - sz * cx) + point.z * (cz * sy * cx + sz * sx) +
+               vehicle_pose.pose.position.x;
+    output.y = point.x * (sz * cy) + point.y * (sz * sy * sx + cz * cx) + point.z * (sz * sy * cx - cz * sx) +
+               vehicle_pose.pose.position.y;
+    output.z = point.x * (-sy) + point.y * (cy * sx) + point.z * (cy * cx) + vehicle_pose.pose.position.z;
 
     return output;
 }
+
 geometry_msgs::Point camera_relative;
+geometry_msgs::Point rover_pose;
 bool rover_seen = false;
 
 void arucoCallback(fiducial_msgs::FiducialTransformArray_<std::allocator<void>> msg) {
-    if(msg.transforms.size() !=0){
+    if (msg.transforms.size() != 0) {
 
         rover_seen = true;
         camera_relative.x = msg.transforms[0].transform.translation.x;
@@ -108,8 +113,7 @@ void arucoCallback(fiducial_msgs::FiducialTransformArray_<std::allocator<void>> 
 
 
         rover_pose = rotate_point(camera_relative);
-    }
-    else{
+    } else {
         rover_seen = false;
     }
 }
@@ -118,7 +122,6 @@ void arucoCallback(fiducial_msgs::FiducialTransformArray_<std::allocator<void>> 
 double altitude_control(double cruise_height) {
     return (Pz_gain * (cruise_height - vehicle_pose.pose.position.z) + Dz_gain * vehicle_velocity.twist.linear.z) > 2
            ? 2 : (Pz_gain * (cruise_height - vehicle_pose.pose.position.z) + Dz_gain * vehicle_velocity.twist.linear.z);
-    //check direction of vel.z
 }
 
 geometry_msgs::Twist arc_follower(PathSegment arc2follow) {
@@ -133,11 +136,12 @@ geometry_msgs::Twist arc_follower(PathSegment arc2follow) {
 
     double angle_to_center = atan2(arc2follow.center.y - vehicle_pose.pose.position.y,
                                    arc2follow.center.x - vehicle_pose.pose.position.x);
-    double angle_vel = atan2(vehicle_velocity.twist.linear.y, vehicle_velocity.twist.linear.x);
-    double mag_vel = sqrt(pow(vehicle_velocity.twist.linear.y, 2) + pow(vehicle_velocity.twist.linear.x, 2));
-    mag_vel = mag_vel * cos(angle_vel - angle_to_center);
-    output.linear.x = output.linear.x + (Pa_gain * r_error + Da_gain * mag_vel) * cos(angle_to_center);
-    output.linear.y = output.linear.y + (Pa_gain * r_error + Da_gain * mag_vel) * sin(angle_to_center);
+    double velocity_direction = atan2(vehicle_velocity.twist.linear.y, vehicle_velocity.twist.linear.x);
+    double velocity_magnitude = sqrt(pow(vehicle_velocity.twist.linear.y, 2) + pow(vehicle_velocity.twist.linear.x, 2));
+    velocity_magnitude = velocity_magnitude * cos(velocity_direction - angle_to_center);
+
+    output.linear.x = output.linear.x + (Pa_gain * r_error + Da_gain * velocity_magnitude) * cos(angle_to_center);
+    output.linear.y = output.linear.y + (Pa_gain * r_error + Da_gain * velocity_magnitude) * sin(angle_to_center);
     output.linear.z = altitude_control(cruise_height);
 
     return output;
@@ -195,11 +199,11 @@ geometry_msgs::Twist land_position_controller(geometry_msgs::Point target) {
     prev_x_err = x_err;
     prev_y_err = y_err;
 
-    double x_err_derivative = (x_err - prev_x_err) * frequency;
-    double y_err_derivative = (y_err - prev_y_err) * frequency;
-
     x_err = target.x - vehicle_pose.pose.position.x;
     y_err = target.y - vehicle_pose.pose.position.y;
+
+    double x_err_derivative = (x_err - prev_x_err) * frequency;
+    double y_err_derivative = (y_err - prev_y_err) * frequency;
 
     x_err_integrated = x_err_integrated + x_err / frequency;
     y_err_integrated = y_err_integrated + y_err / frequency;
@@ -218,8 +222,10 @@ geometry_msgs::Twist land_position_controller(geometry_msgs::Point target) {
     output.linear.z = -descent_rate;
 
     if (pow(output.linear.x, 2) + pow(output.linear.y, 2) > pow(max_position_control_velocity, 2)) {
-        output.linear.x = output.linear.x * sqrt(pow(output.linear.x, 2) + pow(output.linear.y, 2)) / max_position_control_velocity;
-        output.linear.y = output.linear.y * sqrt(pow(output.linear.x, 2) + pow(output.linear.y, 2)) / max_position_control_velocity;
+        output.linear.x = output.linear.x * sqrt(pow(output.linear.x, 2) + pow(output.linear.y, 2)) /
+                          max_position_control_velocity;
+        output.linear.y = output.linear.y * sqrt(pow(output.linear.x, 2) + pow(output.linear.y, 2)) /
+                          max_position_control_velocity;
     }
 
     return output;
@@ -279,6 +285,11 @@ int main(int argc, char **argv) {
     ros::param::get("camera_parameters/camera_vertical_fov", camera_vertical_fov);
     ros::param::get("camera_parameters/camera_horizontal_fov", camera_horizontal_fov);
     ros::param::get("camera_parameters/overlap", overlap);
+    ros::param::get("coordinate_file_name", coordinate_file_name);
+    ros::param::get("drone/land_type", land_type);
+
+
+
 
 
     // wait for FCU connection
@@ -341,13 +352,20 @@ int main(int argc, char **argv) {
 
     ROS_INFO("Generating Survey Path");
 
+    std::string address = ros::package::getPath("fly_control");
+    address = address + "/config/" + coordinate_file_name;
+
+    char file_name[1024];
+    strcpy(file_name, address.c_str());
+    ROS_INFO("reading coordinates from: %s", file_name);
+
     survey_path_generator survey;
     survey.d = (cruise_height * sin(camera_horizontal_fov / 2.0)) * (1.0 - overlap);
     //survey.d=5;
 
-    survey.read_from_file(vehicle_pose.pose.position, global_pose);
+    survey.read_from_file(address, vehicle_pose.pose.position, global_pose);
 
-    ROS_INFO("%d", survey.Polygon.size());
+    ROS_INFO("Number of coordinates read: %d", survey.Polygon.size());
 
     survey.standardize();
 
@@ -361,7 +379,7 @@ int main(int argc, char **argv) {
     survey.add_arcs(survey.choose_side(vehicle_pose.pose.position));
 
     ROS_INFO("arcs added, total path contains %d segments", survey.survey_points.size());
-    ROS_INFO("Beginning point:   %f   %f",  survey.survey_points[0].point_begin.x,
+    ROS_INFO("Beginning point:   %f   %f", survey.survey_points[0].point_begin.x,
              survey.survey_points[0].point_begin.y);
 
 
@@ -392,7 +410,7 @@ int main(int argc, char **argv) {
     ROS_INFO("Take off");
 
     take_off_p = vehicle_pose;
-    take_off_p.pose.position.z=cruise_height;
+    take_off_p.pose.position.z = cruise_height;
 
 
     geometry_msgs::Point final_point;
@@ -450,34 +468,37 @@ int main(int argc, char **argv) {
 
     }
 
-    geometry_msgs::PoseStamped wait_p;
-    wait_p = vehicle_pose;
+    if (land_type == 1) {  //1:land on rover, else: land where you are
+        geometry_msgs::PoseStamped wait_p;
+        wait_p = vehicle_pose;
 
-    while(ros::ok() && !rover_seen){
-        ROS_INFO("Waiting to detect rover");
+        while (ros::ok() && !rover_seen) {
+            ROS_INFO("Waiting to detect rover");
 
-        pub_segment.index = -7;  //wainting for rover
-        segment_pub.publish(pub_segment); //publish current segment of the path to inform other nodes/vehicle
+            pub_segment.index = -7;  //waiting for rover
+            segment_pub.publish(pub_segment); //publish current segment of the path to inform other nodes/vehicle
 
-        local_pos_pub.publish(wait_p);
-        final_point_pub.publish(final_point);
+            local_pos_pub.publish(wait_p);
+            final_point_pub.publish(final_point);
 
-        ros::spinOnce;
-        rate.sleep();
+            ros::spinOnce;
+            rate.sleep();
 
-    }
+        }
 
-    ROS_INFO("Starting landing");
-    while (ros::ok() && current_state.mode == "OFFBOARD") {
+        ROS_INFO("Starting landing");
+        while (ros::ok() && current_state.mode == "OFFBOARD") {
 
-        set_vel_pub.publish(land_position_controller(rover_pose));
+            set_vel_pub.publish(land_position_controller(rover_pose));
 
-        pub_segment.index = -6;
-        segment_pub.publish(pub_segment);
-        final_point_pub.publish(final_point);  //publish end of the path to inform rover.
+            pub_segment.index = -6;
+            segment_pub.publish(pub_segment);
+            final_point_pub.publish(final_point);  //publish end of the path to inform rover.
 
-        ros::spinOnce();
-        rate.sleep();
+            ros::spinOnce();
+            rate.sleep();
+        }
+
     }
 
     ROS_INFO("Ended");

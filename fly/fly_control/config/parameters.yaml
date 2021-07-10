@@ -1,4 +1,8 @@
-simulation : 1
+simulation : 0
+
+coordinate_file_name: coordinates.txt
+image_folder_name: /home
+
 drone:
   look_ahead_distance: 3
   cruise_velocity: 3
@@ -11,9 +15,18 @@ drone:
   Dp_gain: 0.01
   Ip_gain: 0.05
   descent_rate: 0.5
-  max_position_control_velocity: 5
+  max_position_control_velocity: 2
   integration_limit: 10
   max_distance_to_path: 30
+  land_type: 1
+
+rover:
+  look_ahead_distance: 2
+  cruise_velocity: 0.7
+  P_gain_direction: 0.8
+  D_gain_direction: -0.1
+  mission_reach_treshold: 0.5
+  vehicle_width: 0.5
 
 
 camera_parameters:
