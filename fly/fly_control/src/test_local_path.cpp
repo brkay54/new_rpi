@@ -7,10 +7,16 @@
 
 
 int main () {
-    geometry_msgs::Point global, local, target;
+
+    double cruise_height = 10;
+    double camera_horizontal_fov = 1.0855947947;
+    double overlap = 0.5;
 
     survey_path_generator survey;
-    survey.d=5;
+
+    survey.d = (cruise_height * sin(camera_horizontal_fov / 2.0)) * (1.0 - overlap);
+    //survey.d=5;
+
     survey.read_from_file("/home/ahmet/int/src/new_rpi/fly/fly_control/config/local_coordinates.txt");
     std::cout<<survey.Polygon.size();
 
@@ -28,19 +34,3 @@ int main () {
 
 }
 
-/*
-   survey_path_generator survey;
-   survey.d=10;
-    std::cout<<"1";
-   survey.read_from_file();
-    std::cout<<survey.Polygon.size();
-    survey.standardize();
-    std::cout<<"3";
-    survey.generate_path();
-    std::cout<<"4";
-    survey.add_arcs(1);
-    std::cout<<"5";
-
-
-    path_plotter::plot(survey.survey_points, survey.Polygon);
-*/
