@@ -17,7 +17,8 @@ int main () {
     survey.standardize();
     survey.generate_path();
     survey.add_arcs(0);
-    std::cout<<survey.Polygon.size();
+
+    std::cout<<"Polygone size:"<<survey.Polygon.size()<<std::endl;
     for(int i=0; i<survey.Polygon.size(); i++){
         std::cout<<survey.Polygon[i].x<<" "<<survey.Polygon[i].y<<std::endl;
     }

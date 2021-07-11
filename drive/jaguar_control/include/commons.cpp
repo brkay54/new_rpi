@@ -146,10 +146,3 @@ geometry_msgs::Point commons::global_to_local(geometry_msgs::Point target_global
 
     return target_local;
 }
-
-PathSegment commons::perpendicular_line (PathSegment line){
-    PathSegment output;
-    output.point_begin = line.point_end;
-    output.point_end.x = -line.point_begin.y;
-    output.point_end.y = line.point_begin.x;
-}

@@ -120,7 +120,7 @@ void survey_path_generator::generate_path() {
     }
     for (int i = 0; i < LSD.size(); i++) {
 
-        if (LSD[i][0].size() != 0 ) {
+        if (LSD[i][0].size() != 0 && i != 0 && i != LSD.size() - 1) {
             geometry_msgs::Point left_border;
             double farthest = 0;
             for (int j = 0; j < LSD[i][0].size(); j++) {
@@ -132,8 +132,14 @@ void survey_path_generator::generate_path() {
             LSD[i][2].push_back(left_border);
         } else {
             PathSegment left_border_line;
-            int n = 1;
-            while (LSD[i - n][0].size() == 0) { n++; }
+
+            int n = 0;
+
+            if (i != 0) {
+                n = 1;
+                while (LSD[i - n][0].size() == 0) { n++; }
+
+            }
 
             geometry_msgs::Point LSpoint;
             LSpoint.x =
@@ -150,8 +156,13 @@ void survey_path_generator::generate_path() {
                             commons::projection_on_line(sweep_line, LSD[i - n][0][j]), LSpoint);
                 }
             }
-            n = 1;
-            while (LSD[i + n][0].size() == 0) { n++; }
+
+            n = 0;
+
+            if (i != LSD.size()-1) {
+                n = 1;
+                while (LSD[i + n][0].size() == 0) { n++; }
+            }
 
             min_dist_to_lspoint = 0;
             for (int j = 0; j < LSD[i + n][0].size(); j++) {
@@ -189,7 +200,7 @@ void survey_path_generator::generate_path() {
             }
         }
 
-        if (LSD[i][1].size() != 0) {
+        if (LSD[i][1].size() != 0 && i != 0 && i != LSD.size() - 1) {
             geometry_msgs::Point right_border;
             double farthest = 0;
             for (int j = 0; j < LSD[i][1].size(); j++) {
@@ -202,8 +213,13 @@ void survey_path_generator::generate_path() {
             LSD[i][3].push_back(right_border);
         } else {
             PathSegment right_border_line;
-            int n = 1;
-            while (LSD[i - n][1].size() == 0) { n++; }
+
+            int n = 0;
+            if (i != 0) {
+                n = 1;
+                while (LSD[i - n][1].size() == 0) { n++; }
+
+            }
 
             geometry_msgs::Point LSpoint;
             LSpoint.x =
@@ -220,8 +236,13 @@ void survey_path_generator::generate_path() {
                             commons::projection_on_line(sweep_line, LSD[i - n][1][j]), LSpoint);
                 }
             }
-            n = 1;
-            while (LSD[i + n][1].size() == 0) { n++; }
+
+            n = 0;
+            if (i != LSD.size()-1) {
+                n = 1;
+                while (LSD[i + n][1].size() == 0) { n++; }
+
+            }
             min_dist_to_lspoint = 0;
 
             for (int j = 0; j < LSD[i + n][1].size(); j++) {
@@ -380,7 +401,7 @@ void survey_path_generator::add_arcs(int side) {
                 survey_points[i + 1].point_end = arc.point_end;
 
             } else {
-  //              arc.center.x = (survey_points[i].point_begin.x + survey_points[i + 1].point_begin.x) / 2.0;
+                //              arc.center.x = (survey_points[i].point_begin.x + survey_points[i + 1].point_begin.x) / 2.0;
 //                arc.center.y = (survey_points[i].point_begin.y + survey_points[i + 1].point_begin.y) / 2.0;
 
                 PathSegment center1, center2;
