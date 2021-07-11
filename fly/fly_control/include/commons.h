@@ -23,6 +23,7 @@ public:
     static double angle_between_lines(PathSegment l1, PathSegment l2);
     static double distance_between_points(geometry_msgs::Point p1, geometry_msgs::Point p2);
     static geometry_msgs::Point global_to_local (geometry_msgs::Point target_global, geometry_msgs::Point vehicle_global, geometry_msgs::Point vehicle_local);
+    static PathSegment perpendicular_line(PathSegment line);
 };
 
 

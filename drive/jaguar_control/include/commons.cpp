@@ -101,7 +101,6 @@ double commons::distance_between_points(geometry_msgs::Point p1, geometry_msgs::
 
 double commons::distance_to_line(PathSegment l, geometry_msgs::Point a){
     return distance_between_points(projection_on_line(l, a), a);
-
 }
 
 geometry_msgs::Point commons::global_to_local(geometry_msgs::Point target_global, geometry_msgs::Point vehicle_global, geometry_msgs::Point vehicle_local){
@@ -110,7 +109,7 @@ geometry_msgs::Point commons::global_to_local(geometry_msgs::Point target_global
     double N;
 
     vehicle_global.x = vehicle_global.x*pi/180.0;  //default global coordinates are in degrees. Transform them to radians.
-    vehicle_global.y = vehicle_global.y*pi/180.0;
+    vehicle_global.y = vehicle_global.y*pi/180.0;  //to use with sin, cos
 
     target_global.x = target_global.x*pi/180;
     target_global.y = target_global.y*pi/180;
@@ -146,4 +145,11 @@ geometry_msgs::Point commons::global_to_local(geometry_msgs::Point target_global
 
 
     return target_local;
+}
+
+PathSegment commons::perpendicular_line (PathSegment line){
+    PathSegment output;
+    output.point_begin = line.point_end;
+    output.point_end.x = -line.point_begin.y;
+    output.point_end.y = line.point_begin.x;
 }
