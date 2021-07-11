@@ -162,8 +162,12 @@ gazebo::msgs::Twist line_follower(PathSegment l,
 
     gazebo::msgs::Twist output;
     output.mutable_linear()->set_x((vel_right_wheel + vel_left_wheel) / 2.0);
-;
+    output.mutable_linear()->set_z(0);
+    output.mutable_linear()->set_y(0);
+    output.mutable_angular()->set_x(0);
+    output.mutable_angular()->set_y(0);
     output.mutable_angular()->set_z((vel_right_wheel - vel_left_wheel) / vehicle_width);
+
     return output;
 
 
@@ -190,7 +194,7 @@ int main(int argc, char **argv) {
     gazebo::transport::NodePtr node(new gazebo::transport::Node());
     node->Init();
     gazebo::transport::PublisherPtr pub =
-            node->Advertise<gazebo::msgs::Twist>("/gazebo/default/jaguar_0/cmd_vel_twist");
+            node->Advertise<gazebo::msgs::Twist>("~/jaguar_0/cmd_vel_twist");
     ROS_INFO("asd");
     pub->WaitForConnection();
     ROS_INFO("asd2");
@@ -281,20 +285,27 @@ int main(int argc, char **argv) {
 
 
     gazebo::msgs::Twist output;
-
-    while (ros::ok()) {
+        while (ros::ok()) {
         if (mode == 1) {
-            output.mutable_linear()->set_x(joystick.axes[4]);
-            output.mutable_angular()->set_z(joystick.axes[3]);
-            pub->Publish(output);
+                output.mutable_linear()->set_x(0.5);
+                output.mutable_linear()->set_z(0);
+                output.mutable_linear()->set_y(0);
+                output.mutable_angular()->set_x(0);
+                output.mutable_angular()->set_y(0);
+                output.mutable_angular()->set_z(0.5);
+                pub->Publish(output);
+
+
+
             ROS_INFO("Manual");
+            std::cout << output.linear().x() << ", " << output.angular().z() <<std::endl;
+
 
         } else if (mode == 2) {
 
             output = line_follower(target_line, vehicle_pose);
             pub->Publish(output);
             ROS_INFO("Autonomous");
-
             if (commons::distance_between_points(commons::projection_on_line(target_line, vehicle_pose.pose.position),
                                                  target_line.point_end) < mission_reach_treshold) {
                 target_line=stop_line;

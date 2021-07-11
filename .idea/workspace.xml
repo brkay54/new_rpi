@@ -239,8 +239,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e00fab15-fcd1-4c36-8a87-c3591dda2dc6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/drive/jaguar_control/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/drive/jaguar_control/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/drive/jaguar_control/launch/sim_jaguar_control.launch" beforeDir="false" afterPath="$PROJECT_DIR$/drive/jaguar_control/launch/sim_jaguar_control.launch" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/drive/jaguar_control/src/sim_drive_path_follower.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/drive/jaguar_control/src/sim_drive_path_follower.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -269,11 +268,6 @@
     <property name="ctest.advertisement.all.test.configuration.is.created" value="true" />
   </component>
   <component name="RunManager" selected="CMake Application.drrobot_jaguarv2_player_node">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="aruco_images_test" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="aruco_images_test" CONFIG_NAME="Release" RUN_TARGET_PROJECT_NAME="Project" RUN_TARGET_NAME="aruco_images_test" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -1528,10 +1522,10 @@
       <item itemvalue="CMake Application.gmock_main" />
       <item itemvalue="CMake Application.gtest" />
       <item itemvalue="CMake Application.gtest_main" />
+      <item itemvalue="CTest Application.All CTest" />
       <item itemvalue="Google Test.aruco_images_test" />
       <item itemvalue="Google Test.auto_init_403_test" />
       <item itemvalue="Google Test.transform_var_test" />
-      <item itemvalue="CTest Application.All CTest" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -1544,7 +1538,8 @@
       <updated>1625898601984</updated>
       <workItem from="1625898607659" duration="642000" />
       <workItem from="1625899276191" duration="217000" />
-      <workItem from="1625899495169" duration="8031000" />
+      <workItem from="1625899495169" duration="11386000" />
+      <workItem from="1626003612178" duration="1863000" />
     </task>
     <servers />
   </component>
