@@ -8,28 +8,28 @@
       <config projectName="Project" targetName="roscpp_generate_messages_py" />
       <config projectName="Project" targetName="camera_trig" />
       <config projectName="Project" targetName="drrobot_jaguarv2_player_node" />
-      <config projectName="Project" targetName="clean_test_results" />
       <config projectName="Project" targetName="fiducial_msgs_genlisp" />
+      <config projectName="Project" targetName="clean_test_results" />
       <config projectName="Project" targetName="drrobot_jaguarV2_player_generate_messages_nodejs" />
       <config projectName="Project" targetName="geometry_msgs_generate_messages_cpp" />
       <config projectName="Project" targetName="rosgraph_msgs_generate_messages_cpp" />
       <config projectName="Project" targetName="geometry_msgs_generate_messages_lisp" />
       <config projectName="Project" targetName="rosgraph_msgs_generate_messages_py" />
-      <config projectName="Project" targetName="_drrobot_jaguarV2_player_generate_messages_check_deps_CustomSensor" />
       <config projectName="Project" targetName="dynamic_reconfigure_gencfg" />
+      <config projectName="Project" targetName="_drrobot_jaguarV2_player_generate_messages_check_deps_CustomSensor" />
       <config projectName="Project" targetName="drrobot_jaguarV2_player_gennodejs" />
       <config projectName="Project" targetName="trajectory_msgs_generate_messages_lisp" />
       <config projectName="Project" targetName="uuid_msgs_generate_messages_lisp" />
       <config projectName="Project" targetName="auto_init_403_test" />
       <config projectName="Project" targetName="_catkin_empty_exported_target" />
       <config projectName="Project" targetName="tf2_msgs_generate_messages_nodejs" />
-      <config projectName="Project" targetName="_run_tests_aruco_detect" />
       <config projectName="Project" targetName="actionlib_generate_messages_py" />
+      <config projectName="Project" targetName="_run_tests_aruco_detect" />
       <config projectName="Project" targetName="fiducial_msgs_geneus" />
       <config projectName="Project" targetName="_fly_msgs_generate_messages_check_deps_Line" />
       <config projectName="Project" targetName="run_tests_aruco_detect_rostest" />
-      <config projectName="Project" targetName="roscpp_generate_messages_nodejs" />
       <config projectName="Project" targetName="rosgraph_msgs_generate_messages_eus" />
+      <config projectName="Project" targetName="roscpp_generate_messages_nodejs" />
       <config projectName="Project" targetName="drrobot_jaguarV2_player_genlisp" />
       <config projectName="Project" targetName="fly_msgs_generate_messages_cpp" />
       <config projectName="Project" targetName="_drrobot_jaguarV2_player_generate_messages_check_deps_IMUInfo" />
@@ -46,8 +46,8 @@
       <config projectName="Project" targetName="fly_msgs_generate_messages_eus" />
       <config projectName="Project" targetName="fiducial_slam_genpy" />
       <config projectName="Project" targetName="_drrobot_jaguarV2_player_generate_messages_check_deps_MotorInfoArray" />
-      <config projectName="Project" targetName="std_srvs_generate_messages_eus" />
       <config projectName="Project" targetName="run_tests_fiducial_slam_gtest" />
+      <config projectName="Project" targetName="std_srvs_generate_messages_eus" />
       <config projectName="Project" targetName="_run_tests_fiducial_slam_rostest" />
       <config projectName="Project" targetName="_fiducial_msgs_generate_messages_check_deps_Fiducial" />
       <config projectName="Project" targetName="_run_tests_fiducial_slam_gtest" />
@@ -66,17 +66,17 @@
       <config projectName="Project" targetName="tf_generate_messages_cpp" />
       <config projectName="Project" targetName="gazebo_msgs_generate_messages_lisp" />
       <config projectName="Project" targetName="sim_drive_path_follower" />
-      <config projectName="Project" targetName="roscpp_generate_messages_eus" />
       <config projectName="Project" targetName="gmock" />
-      <config projectName="Project" targetName="tests" />
+      <config projectName="Project" targetName="roscpp_generate_messages_eus" />
       <config projectName="Project" targetName="diagnostic_msgs_generate_messages_cpp" />
+      <config projectName="Project" targetName="tests" />
       <config projectName="Project" targetName="fiducial_msgs_generate_messages_py" />
       <config projectName="Project" targetName="run_tests_aruco_detect_rostest_test_aruco_images.test" />
-      <config projectName="Project" targetName="fiducial_msgs_genpy" />
       <config projectName="Project" targetName="fiducial_slam_genlisp" />
-      <config projectName="Project" targetName="aruco_images_test" />
+      <config projectName="Project" targetName="fiducial_msgs_genpy" />
       <config projectName="Project" targetName="fiducial_slam_generate_messages_lisp" />
       <config projectName="Project" targetName="transform_var_test" />
+      <config projectName="Project" targetName="aruco_images_test" />
       <config projectName="Project" targetName="fiducial_slam_generate_messages" />
       <config projectName="Project" targetName="mavros_msgs_generate_messages_nodejs" />
       <config projectName="Project" targetName="_fiducial_msgs_generate_messages_check_deps_FiducialMapEntry" />
@@ -92,18 +92,19 @@
       <config projectName="Project" targetName="tf_generate_messages_lisp" />
       <config projectName="Project" targetName="aruco_detect" />
       <config projectName="Project" targetName="geographic_msgs_generate_messages_py" />
+      <config projectName="Project" targetName="tester" />
       <config projectName="Project" targetName="fiducial_msgs_gennodejs" />
       <config projectName="Project" targetName="gazebo_msgs_generate_messages_eus" />
       <config projectName="Project" targetName="roscpp_generate_messages_lisp" />
       <config projectName="Project" targetName="_fly_msgs_generate_messages_check_deps_Path" />
-      <config projectName="Project" targetName="visualization_msgs_generate_messages_lisp" />
       <config projectName="Project" targetName="fly_msgs_generate_messages" />
+      <config projectName="Project" targetName="visualization_msgs_generate_messages_lisp" />
       <config projectName="Project" targetName="geometry_msgs_generate_messages_eus" />
       <config projectName="Project" targetName="sim_camera_trig" />
       <config projectName="Project" targetName="tf_generate_messages_py" />
       <config projectName="Project" targetName="_drrobot_jaguarV2_player_generate_messages_check_deps_RangeArray" />
-      <config projectName="Project" targetName="diagnostic_msgs_generate_messages_lisp" />
       <config projectName="Project" targetName="trajectory_msgs_generate_messages_cpp" />
+      <config projectName="Project" targetName="diagnostic_msgs_generate_messages_lisp" />
       <config projectName="Project" targetName="geographic_msgs_generate_messages_eus" />
       <config projectName="Project" targetName="tf2_msgs_generate_messages_cpp" />
       <config projectName="Project" targetName="_run_tests_fiducial_slam_rostest_test_auto_init_403.test" />
@@ -113,15 +114,15 @@
       <config projectName="Project" targetName="nav_msgs_generate_messages_cpp" />
       <config projectName="Project" targetName="run_tests_aruco_detect" />
       <config projectName="Project" targetName="drrobot_jaguarV2_player_genpy" />
-      <config projectName="Project" targetName="_fiducial_slam_generate_messages_check_deps_AddFiducial" />
       <config projectName="Project" targetName="actionlib_msgs_generate_messages_eus" />
       <config projectName="Project" targetName="tf2_msgs_generate_messages_eus" />
+      <config projectName="Project" targetName="_fiducial_slam_generate_messages_check_deps_AddFiducial" />
       <config projectName="Project" targetName="fly_msgs_generate_messages_nodejs" />
       <config projectName="Project" targetName="fly_msgs_gennodejs" />
-      <config projectName="Project" targetName="drive_path_follower" />
       <config projectName="Project" targetName="run_tests_fiducial_slam_rostest_test_init_map_aruco.xml" />
-      <config projectName="Project" targetName="actionlib_msgs_generate_messages_lisp" />
+      <config projectName="Project" targetName="drive_path_follower" />
       <config projectName="Project" targetName="nav_msgs_generate_messages_eus" />
+      <config projectName="Project" targetName="actionlib_msgs_generate_messages_lisp" />
       <config projectName="Project" targetName="_fiducial_msgs_generate_messages_check_deps_FiducialTransform" />
       <config projectName="Project" targetName="gazebo_msgs_generate_messages_py" />
       <config projectName="Project" targetName="clean_test_results_aruco_detect" />
@@ -139,22 +140,22 @@
       <config projectName="Project" targetName="mavros_msgs_generate_messages_cpp" />
       <config projectName="Project" targetName="sensor_msgs_generate_messages_eus" />
       <config projectName="Project" targetName="fly_msgs_generate_messages_lisp" />
-      <config projectName="Project" targetName="fiducial_slam_geneus" />
       <config projectName="Project" targetName="fly_msgs_gencpp" />
       <config projectName="Project" targetName="std_msgs_generate_messages_lisp" />
+      <config projectName="Project" targetName="fiducial_slam_geneus" />
       <config projectName="Project" targetName="dynamic_reconfigure_generate_messages_py" />
       <config projectName="Project" targetName="actionlib_generate_messages_cpp" />
       <config projectName="Project" targetName="trajectory_msgs_generate_messages_eus" />
-      <config projectName="Project" targetName="geographic_msgs_generate_messages_cpp" />
       <config projectName="Project" targetName="gtest_main" />
+      <config projectName="Project" targetName="geographic_msgs_generate_messages_cpp" />
       <config projectName="Project" targetName="geographic_msgs_generate_messages_nodejs" />
       <config projectName="Project" targetName="clean_test_results_fiducial_slam" />
       <config projectName="Project" targetName="run_tests_fiducial_slam_gtest_transform_var_test" />
       <config projectName="Project" targetName="_run_tests_aruco_detect_rostest_test_aruco_images.test" />
       <config projectName="Project" targetName="fiducial_msgs_generate_messages_nodejs" />
       <config projectName="Project" targetName="mavros_msgs_generate_messages_eus" />
-      <config projectName="Project" targetName="run_tests_fiducial_slam" />
       <config projectName="Project" targetName="sensor_msgs_generate_messages_cpp" />
+      <config projectName="Project" targetName="run_tests_fiducial_slam" />
       <config projectName="Project" targetName="uuid_msgs_generate_messages_eus" />
       <config projectName="Project" targetName="fiducial_slam_gencpp" />
       <config projectName="Project" targetName="fiducial_slam_gennodejs" />
@@ -172,11 +173,11 @@
       <config projectName="Project" targetName="uuid_msgs_generate_messages_cpp" />
       <config projectName="Project" targetName="gtest" />
       <config projectName="Project" targetName="drrobot_jaguarV2_player_gencpp" />
-      <config projectName="Project" targetName="drrobot_jaguarV2_player_generate_messages_eus" />
       <config projectName="Project" targetName="mavros_msgs_generate_messages_lisp" />
+      <config projectName="Project" targetName="drrobot_jaguarV2_player_generate_messages_eus" />
       <config projectName="Project" targetName="rosgraph_msgs_generate_messages_lisp" />
-      <config projectName="Project" targetName="run_tests_fiducial_slam_rostest_test_auto_init_403.test" />
       <config projectName="Project" targetName="std_msgs_generate_messages_py" />
+      <config projectName="Project" targetName="run_tests_fiducial_slam_rostest_test_auto_init_403.test" />
       <config projectName="Project" targetName="trajectory_msgs_generate_messages_py" />
       <config projectName="Project" targetName="_drrobot_jaguarV2_player_generate_messages_check_deps_MotorInfo" />
       <config projectName="Project" targetName="_fiducial_msgs_generate_messages_check_deps_InitializeMap" />
@@ -186,19 +187,19 @@
       <config projectName="Project" targetName="std_msgs_generate_messages_eus" />
       <config projectName="Project" targetName="fly_msgs_geneus" />
       <config projectName="Project" targetName="fiducial_slam_generate_messages_nodejs" />
-      <config projectName="Project" targetName="drrobot_jaguarV2_player_geneus" />
       <config projectName="Project" targetName="std_srvs_generate_messages_py" />
-      <config projectName="Project" targetName="_run_tests_aruco_detect_rostest" />
+      <config projectName="Project" targetName="drrobot_jaguarV2_player_geneus" />
       <config projectName="Project" targetName="_fiducial_msgs_generate_messages_check_deps_FiducialTransformArray" />
-      <config projectName="Project" targetName="drrobot_jaguarV2_player_generate_messages_cpp" />
+      <config projectName="Project" targetName="_run_tests_aruco_detect_rostest" />
       <config projectName="Project" targetName="mavros_msgs_generate_messages_py" />
+      <config projectName="Project" targetName="drrobot_jaguarV2_player_generate_messages_cpp" />
       <config projectName="Project" targetName="dynamic_reconfigure_generate_messages_cpp" />
       <config projectName="Project" targetName="fiducial_slam_generate_messages_py" />
       <config projectName="Project" targetName="run_tests" />
       <config projectName="Project" targetName="actionlib_msgs_generate_messages_nodejs" />
       <config projectName="Project" targetName="tf2_msgs_generate_messages_lisp" />
-      <config projectName="Project" targetName="_drrobot_jaguarV2_player_generate_messages_check_deps_Range" />
       <config projectName="Project" targetName="sensor_msgs_generate_messages_lisp" />
+      <config projectName="Project" targetName="_drrobot_jaguarV2_player_generate_messages_check_deps_Range" />
       <config projectName="Project" targetName="uuid_msgs_generate_messages_py" />
       <config projectName="Project" targetName="dynamic_reconfigure_generate_messages_eus" />
       <config projectName="Project" targetName="fly_msgs_generate_messages_py" />
@@ -240,7 +241,62 @@
   <component name="ChangeListManager">
     <list default="true" id="e00fab15-fcd1-4c36-8a87-c3591dda2dc6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/drive/jaguar_control/src/sim_drive_path_follower.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/drive/jaguar_control/src/sim_drive_path_follower.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fly/fiducials/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fly/fiducials/aruco_detect/CHANGELOG.rst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fly/fiducials/aruco_detect/CMakeLists.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fly/fiducials/aruco_detect/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fly/fiducials/aruco_detect/cfg/DetectorParams.cfg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fly/fiducials/aruco_detect/launch/aruco_detect.launch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fly/fiducials/aruco_detect/package.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fly/fiducials/aruco_detect/scripts/create_markers.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fly/fiducials/aruco_detect/src/aruco_detect.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fly/fiducials/aruco_detect/test/aruco_images.test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fly/fiducials/aruco_detect/test/aruco_images_test.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fly/fiducials/aruco_detect/test/test_images/tag_01_d7_14cm.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fly/fiducials/aruco_detect/test/test_images/tag_245-246_d7_14cm.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fly/fiducials/aruco_detect/test/test_images/test.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducial_msgs/CHANGELOG.rst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducial_msgs/CMakeLists.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducial_msgs/msg/Fiducial.msg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducial_msgs/msg/FiducialArray.msg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducial_msgs/msg/FiducialMapEntry.msg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducial_msgs/msg/FiducialMapEntryArray.msg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducial_msgs/msg/FiducialTransform.msg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducial_msgs/msg/FiducialTransformArray.msg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducial_msgs/package.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducial_msgs/srv/InitializeMap.srv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducial_slam/CHANGELOG.rst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducial_slam/CMakeLists.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducial_slam/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducial_slam/fiducials.rviz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducial_slam/include/fiducial_slam/helpers.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducial_slam/include/fiducial_slam/map.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducial_slam/include/fiducial_slam/transform_with_variance.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducial_slam/launch/fiducial_rviz.launch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducial_slam/launch/fiducial_slam.launch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducial_slam/package.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducial_slam/scripts/fit_plane.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducial_slam/scripts/init_map.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducial_slam/scripts/move_origin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducial_slam/scripts/standard_fit.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducial_slam/src/fiducial_slam.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducial_slam/src/map.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducial_slam/src/transform_with_variance.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducial_slam/srv/AddFiducial.srv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducial_slam/test/111_initial_map.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducial_slam/test/610_initial_map.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducial_slam/test/aruco_images.bag" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducial_slam/test/aruco_transforms.bag" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducial_slam/test/auto_init_403.test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducial_slam/test/auto_init_403_test.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducial_slam/test/create_map_aruco.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducial_slam/test/init_map_aruco.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducial_slam/test/map_test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducial_slam/test/test_images/403.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducial_slam/test/transform_var_test.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducials/CHANGELOG.rst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducials/CMakeLists.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducials/package.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -442,11 +498,6 @@
       </method>
     </configuration>
     <configuration name="_run_tests_fiducial_slam_rostest_test_init_map_aruco.xml" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="_run_tests_fiducial_slam_rostest_test_init_map_aruco.xml" CONFIG_NAME="Release">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -1181,6 +1232,11 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="tester" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="tester" CONFIG_NAME="Release" RUN_TARGET_PROJECT_NAME="Project" RUN_TARGET_NAME="tester">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="tests" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="tests" CONFIG_NAME="Release">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -1311,7 +1367,7 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="All CTest" type="CTestRunConfiguration" factoryName="CTestRun" PROGRAM_PARAMS="--extra-verbose" REDIRECT_INPUT="false" ELEVATE="false" WORKING_DIR="file://$CMakeCurrentGenerationDir$" PASS_PARENT_ENVS_2="true" RUN_PATH="$CTestCurrentExecutableName$" EXPLICIT_BUILD_TARGET_NAME="all" TEST_MODE="SUITE_TEST">
+    <configuration name="All CTest" type="CTestRunConfiguration" factoryName="CTestRun" PROGRAM_PARAMS="--extra-verbose" REDIRECT_INPUT="false" ELEVATE="false" WORKING_DIR="file://$CMakeCurrentGenerationDir$" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Release" RUN_PATH="$CTestCurrentExecutableName$" EXPLICIT_BUILD_TARGET_NAME="all" TEST_MODE="SUITE_TEST">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
         <option name="BeforeTestRunTask" enabled="true" />
@@ -1478,6 +1534,7 @@
       <item itemvalue="CMake Application.sensor_msgs_generate_messages_py" />
       <item itemvalue="CMake Application.sim_camera_trig" />
       <item itemvalue="CMake Application.sim_fly_path_follower" />
+      <item itemvalue="CMake Application.tester" />
       <item itemvalue="CMake Application.tf2_msgs_generate_messages_cpp" />
       <item itemvalue="CMake Application.tf2_msgs_generate_messages_eus" />
       <item itemvalue="CMake Application.tf2_msgs_generate_messages_lisp" />
@@ -1539,7 +1596,8 @@
       <workItem from="1625898607659" duration="642000" />
       <workItem from="1625899276191" duration="217000" />
       <workItem from="1625899495169" duration="11386000" />
-      <workItem from="1626003612178" duration="1863000" />
+      <workItem from="1626003612178" duration="8233000" />
+      <workItem from="1628785259817" duration="5000" />
     </task>
     <servers />
   </component>
