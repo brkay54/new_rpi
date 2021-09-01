@@ -83,18 +83,31 @@ geometry_msgs::Point rotate_point(geometry_msgs::Point point) {
 
     geometry_msgs::Point output;
 
+/*
     double cx = cos(-euler.x);
     double sx = sin(-euler.x);
     double cy = cos(-euler.y);
     double sy = sin(-euler.y);
     double cz = cos(-euler.z);
     double sz = sin(-euler.z);
+    ROS_INFO("roll %f pitch %f yaw %f", euler.x, euler.y, euler.z);
+    ROS_INFO("relative pose %f %f %f", point.x, point.y, point.z);
+    output.x = point.x * (cz * cy) + point.y * (cz * sy * sx - sz * cx) + point.z * (cz * sy * cx + sz * sx) ;//+vehicle_pose.pose.position.x;
+    output.y = point.x * (sz * cy) + point.y * (sz * sy * sx + cz * cx) + point.z * (sz * sy * cx - cz * sx) ;//+   vehicle_pose.pose.position.y;
+    output.z = point.x * (-sy) + point.y * (cy * sx) + point.z * (cy * cx);// + vehicle_pose.pose.position.z;
+    output.y = - output.y;
+    output.x = - output.x;
 
-    output.x = point.x * (cz * cy) + point.y * (cz * sy * sx - sz * cx) + point.z * (cz * sy * cx + sz * sx) +
-               vehicle_pose.pose.position.x;
-    output.y = point.x * (sz * cy) + point.y * (sz * sy * sx + cz * cx) + point.z * (sz * sy * cx - cz * sx) +
-               vehicle_pose.pose.position.y;
-    output.z = point.x * (-sy) + point.y * (cy * sx) + point.z * (cy * cx) + vehicle_pose.pose.position.z;
+    output.x = output.x + vehicle_pose.pose.position.x;
+    output.x = output.y + vehicle_pose.pose.position.y;
+    output.x = output.z + vehicle_pose.pose.position.z;
+*/
+    ROS_INFO("roll %f pitch %f yaw %f", euler.x, euler.y, euler.z);
+    ROS_INFO("relative pose %f %f %f", point.x, point.y, point.z);
+    output.x = point.x * cos(euler.z) - point.y * sin(euler.z) + vehicle_pose.pose.position.x;
+    output.y = point.y * cos(euler.z) + point.x * sin(euler.z) + vehicle_pose.pose.position.y;
+
+    ROS_INFO("output pose %f %f %f", output.x, output.y, output.z);
 
     return output;
 }
@@ -107,10 +120,10 @@ void arucoCallback(fiducial_msgs::FiducialTransformArray_<std::allocator<void>> 
     if (msg.transforms.size() != 0) {
 
         rover_seen = true;
-        camera_relative.x = msg.transforms[0].transform.translation.x;
-        camera_relative.y = -msg.transforms[0].transform.translation.y;
+        camera_relative.x = -msg.transforms[0].transform.translation.y;
+        camera_relative.y = -msg.transforms[0].transform.translation.x;
         camera_relative.z = -msg.transforms[0].transform.translation.z;
-
+        ROS_INFO("Rover Seen!");
 
         rover_pose = rotate_point(camera_relative);
     }
@@ -236,24 +249,24 @@ int main(int argc, char **argv) {
     ros::NodeHandle nh;
 
     ros::Subscriber state_sub = nh.subscribe<mavros_msgs::State>
-            ("/mavros/state", 10, state_cb);
+            ("/uav/mavros/state", 10, state_cb);
     ros::Subscriber local_position_sub = nh.subscribe<geometry_msgs::PoseStamped>
-            ("/mavros/local_position/pose", 10, local_position_cb);
+            ("/uav/mavros/local_position/pose", 10, local_position_cb);
     ros::Subscriber body_velocity_sub = nh.subscribe<geometry_msgs::TwistStamped>
-            ("/mavros/local_position/velocity_body", 10, body_velocity_cb);
+            ("/uav/mavros/local_position/velocity_body", 10, body_velocity_cb);
     ros::Subscriber global_position_sub = nh.subscribe<sensor_msgs::NavSatFix>
-            ("/mavros/global_position/global", 10, global_position_cb);
+            ("/uav/mavros/global_position/global", 10, global_position_cb);
     ros::Subscriber aruco_transform_sub = nh.subscribe<fiducial_msgs::FiducialTransformArray>
             ("/fiducial_transforms", 10, arucoCallback);
 
     ros::Publisher set_vel_pub = nh.advertise<geometry_msgs::Twist>
-            ("/mavros/setpoint_velocity/cmd_vel_unstamped", 10);
+            ("/uav/mavros/setpoint_velocity/cmd_vel_unstamped", 10);
     ros::Publisher local_pos_pub = nh.advertise<geometry_msgs::PoseStamped>
-            ("/mavros/setpoint_position/local", 10);
+            ("/uav/mavros/setpoint_position/local", 10);
     ros::Publisher segment_pub = nh.advertise<fly_msgs::Int>
             ("current_segment_index", 10);
     ros::Publisher raw_pub = nh.advertise<mavros_msgs::PositionTarget>
-            ("/mavros/setpoint_raw/local", 10); //body frame pub
+            ("/uav/mavros/setpoint_raw/local", 10); //body frame pub
     ros::Publisher final_point_pub = nh.advertise<geometry_msgs::Point>
             ("/final_point", 10);
 
@@ -359,7 +372,8 @@ int main(int argc, char **argv) {
     survey.d = (cruise_height * sin(camera_horizontal_fov / 2.0)) * (1.0 - overlap);
     //survey.d=5;
 
-    survey.read_from_file(address, vehicle_pose.pose.position, global_pose);
+    //survey.read_from_file(address, vehicle_pose.pose.position, global_pose);  use this function when you want to use global coordinates to represent survey area
+    survey.read_from_file(address);
 
     ROS_INFO("Number of coordinates read: %d", survey.Polygon.size());
 
@@ -425,6 +439,7 @@ int main(int argc, char **argv) {
 
     }
 
+    /*
     ROS_INFO("Going to the beginning survey path");
 
     //go to the beginning of the survey path
@@ -463,7 +478,8 @@ int main(int argc, char **argv) {
         rate.sleep();
 
     }
-
+*/
+    rover_seen = false; //to eliminate effect of rover detection during take off
     if (land_type == 1) {  //1:land on rover, else: land where you are
         geometry_msgs::PoseStamped wait_p;
         wait_p = vehicle_pose;
@@ -477,16 +493,17 @@ int main(int argc, char **argv) {
             local_pos_pub.publish(wait_p);
             final_point_pub.publish(final_point);
 
-            ros::spinOnce;
+            ros::spinOnce();
             rate.sleep();
 
         }
 
         ROS_INFO("Starting landing");
         while (ros::ok() && current_state.mode == "OFFBOARD") {
+            //local_pos_pub.publish(wait_p);
 
             set_vel_pub.publish(land_position_controller(rover_pose));
-
+            ROS_INFO("%f %f %f", rover_pose.x,rover_pose.y,rover_pose.z);
             pub_segment.index = -6;
             segment_pub.publish(pub_segment);
             final_point_pub.publish(final_point);  //publish end of the path to inform rover.

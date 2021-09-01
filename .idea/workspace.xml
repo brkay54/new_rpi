@@ -32,6 +32,7 @@
       <config projectName="Project" targetName="roscpp_generate_messages_nodejs" />
       <config projectName="Project" targetName="drrobot_jaguarV2_player_genlisp" />
       <config projectName="Project" targetName="fly_msgs_generate_messages_cpp" />
+      <config projectName="Project" targetName="test_local_path" />
       <config projectName="Project" targetName="_drrobot_jaguarV2_player_generate_messages_check_deps_IMUInfo" />
       <config projectName="Project" targetName="_drrobot_jaguarV2_player_generate_messages_check_deps_PowerInfo" />
       <config projectName="Project" targetName="std_srvs_generate_messages_cpp" />
@@ -55,6 +56,7 @@
       <config projectName="Project" targetName="fiducial_msgs_generate_messages_lisp" />
       <config projectName="Project" targetName="tf_generate_messages_eus" />
       <config projectName="Project" targetName="nav_msgs_generate_messages_lisp" />
+      <config projectName="Project" targetName="vision_msgs_generate_messages_nodejs" />
       <config projectName="Project" targetName="diagnostic_msgs_generate_messages_eus" />
       <config projectName="Project" targetName="diagnostic_msgs_generate_messages_py" />
       <config projectName="Project" targetName="land" />
@@ -92,7 +94,6 @@
       <config projectName="Project" targetName="tf_generate_messages_lisp" />
       <config projectName="Project" targetName="aruco_detect" />
       <config projectName="Project" targetName="geographic_msgs_generate_messages_py" />
-      <config projectName="Project" targetName="tester" />
       <config projectName="Project" targetName="fiducial_msgs_gennodejs" />
       <config projectName="Project" targetName="gazebo_msgs_generate_messages_eus" />
       <config projectName="Project" targetName="roscpp_generate_messages_lisp" />
@@ -108,6 +109,7 @@
       <config projectName="Project" targetName="geographic_msgs_generate_messages_eus" />
       <config projectName="Project" targetName="tf2_msgs_generate_messages_cpp" />
       <config projectName="Project" targetName="_run_tests_fiducial_slam_rostest_test_auto_init_403.test" />
+      <config projectName="Project" targetName="vision_msgs_generate_messages_eus" />
       <config projectName="Project" targetName="actionlib_generate_messages_nodejs" />
       <config projectName="Project" targetName="uuid_msgs_generate_messages_nodejs" />
       <config projectName="Project" targetName="visualization_msgs_generate_messages_cpp" />
@@ -146,12 +148,15 @@
       <config projectName="Project" targetName="dynamic_reconfigure_generate_messages_py" />
       <config projectName="Project" targetName="actionlib_generate_messages_cpp" />
       <config projectName="Project" targetName="trajectory_msgs_generate_messages_eus" />
+      <config projectName="Project" targetName="vision_msgs_generate_messages_py" />
       <config projectName="Project" targetName="gtest_main" />
       <config projectName="Project" targetName="geographic_msgs_generate_messages_cpp" />
+      <config projectName="Project" targetName="vision_msgs_generate_messages_lisp" />
       <config projectName="Project" targetName="geographic_msgs_generate_messages_nodejs" />
       <config projectName="Project" targetName="clean_test_results_fiducial_slam" />
       <config projectName="Project" targetName="run_tests_fiducial_slam_gtest_transform_var_test" />
       <config projectName="Project" targetName="_run_tests_aruco_detect_rostest_test_aruco_images.test" />
+      <config projectName="Project" targetName="vision_msgs_generate_messages_cpp" />
       <config projectName="Project" targetName="fiducial_msgs_generate_messages_nodejs" />
       <config projectName="Project" targetName="mavros_msgs_generate_messages_eus" />
       <config projectName="Project" targetName="sensor_msgs_generate_messages_cpp" />
@@ -164,6 +169,7 @@
       <config projectName="Project" targetName="tf_generate_messages_nodejs" />
       <config projectName="Project" targetName="aruco_detect_gencfg" />
       <config projectName="Project" targetName="dynamic_reconfigure_generate_messages_nodejs" />
+      <config projectName="Project" targetName="test_global_path" />
       <config projectName="Project" targetName="drrobot_jaguarV2_player_generate_messages_lisp" />
       <config projectName="Project" targetName="_run_tests_fiducial_slam_rostest_test_create_map_aruco.xml" />
       <config projectName="Project" targetName="fiducial_slam_generate_messages_cpp" />
@@ -241,62 +247,8 @@
   <component name="ChangeListManager">
     <list default="true" id="e00fab15-fcd1-4c36-8a87-c3591dda2dc6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fly/fiducials/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fly/fiducials/aruco_detect/CHANGELOG.rst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fly/fiducials/aruco_detect/CMakeLists.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fly/fiducials/aruco_detect/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fly/fiducials/aruco_detect/cfg/DetectorParams.cfg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fly/fiducials/aruco_detect/launch/aruco_detect.launch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fly/fiducials/aruco_detect/package.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fly/fiducials/aruco_detect/scripts/create_markers.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fly/fiducials/aruco_detect/src/aruco_detect.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fly/fiducials/aruco_detect/test/aruco_images.test" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fly/fiducials/aruco_detect/test/aruco_images_test.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fly/fiducials/aruco_detect/test/test_images/tag_01_d7_14cm.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fly/fiducials/aruco_detect/test/test_images/tag_245-246_d7_14cm.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fly/fiducials/aruco_detect/test/test_images/test.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducial_msgs/CHANGELOG.rst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducial_msgs/CMakeLists.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducial_msgs/msg/Fiducial.msg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducial_msgs/msg/FiducialArray.msg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducial_msgs/msg/FiducialMapEntry.msg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducial_msgs/msg/FiducialMapEntryArray.msg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducial_msgs/msg/FiducialTransform.msg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducial_msgs/msg/FiducialTransformArray.msg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducial_msgs/package.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducial_msgs/srv/InitializeMap.srv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducial_slam/CHANGELOG.rst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducial_slam/CMakeLists.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducial_slam/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducial_slam/fiducials.rviz" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducial_slam/include/fiducial_slam/helpers.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducial_slam/include/fiducial_slam/map.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducial_slam/include/fiducial_slam/transform_with_variance.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducial_slam/launch/fiducial_rviz.launch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducial_slam/launch/fiducial_slam.launch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducial_slam/package.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducial_slam/scripts/fit_plane.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducial_slam/scripts/init_map.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducial_slam/scripts/move_origin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducial_slam/scripts/standard_fit.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducial_slam/src/fiducial_slam.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducial_slam/src/map.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducial_slam/src/transform_with_variance.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducial_slam/srv/AddFiducial.srv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducial_slam/test/111_initial_map.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducial_slam/test/610_initial_map.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducial_slam/test/aruco_images.bag" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducial_slam/test/aruco_transforms.bag" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducial_slam/test/auto_init_403.test" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducial_slam/test/auto_init_403_test.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducial_slam/test/create_map_aruco.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducial_slam/test/init_map_aruco.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducial_slam/test/map_test.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducial_slam/test/test_images/403.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducial_slam/test/transform_var_test.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducials/CHANGELOG.rst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducials/CMakeLists.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fly/fiducials/fiducials/package.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fly/fly_control/config/parameters.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/fly/fly_control/config/parameters.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fly/fly_control/src/sim_fly_path_follower.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/fly/fly_control/src/sim_fly_path_follower.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -1232,7 +1184,12 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="tester" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="tester" CONFIG_NAME="Release" RUN_TARGET_PROJECT_NAME="Project" RUN_TARGET_NAME="tester">
+    <configuration name="test_global_path" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="test_global_path" CONFIG_NAME="Release" RUN_TARGET_PROJECT_NAME="Project" RUN_TARGET_NAME="test_global_path">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="test_local_path" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="test_local_path" CONFIG_NAME="Release" RUN_TARGET_PROJECT_NAME="Project" RUN_TARGET_NAME="test_local_path">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -1342,6 +1299,31 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration name="vision_msgs_generate_messages_cpp" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="vision_msgs_generate_messages_cpp" CONFIG_NAME="Release">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="vision_msgs_generate_messages_eus" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="vision_msgs_generate_messages_eus" CONFIG_NAME="Release">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="vision_msgs_generate_messages_lisp" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="vision_msgs_generate_messages_lisp" CONFIG_NAME="Release">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="vision_msgs_generate_messages_nodejs" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="vision_msgs_generate_messages_nodejs" CONFIG_NAME="Release">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="vision_msgs_generate_messages_py" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="vision_msgs_generate_messages_py" CONFIG_NAME="Release">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="visualization_msgs_generate_messages_cpp" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Project" TARGET_NAME="visualization_msgs_generate_messages_cpp" CONFIG_NAME="Release">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -1374,21 +1356,62 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="CMake Application.clean_test_results" />
-      <item itemvalue="CMake Application.download_extra_data" />
-      <item itemvalue="CMake Application.doxygen" />
-      <item itemvalue="CMake Application.run_tests" />
-      <item itemvalue="CMake Application.tests" />
-      <item itemvalue="CMake Application._catkin_empty_exported_target" />
       <item itemvalue="CMake Application.DrRobotMotionSensorDriver" />
+      <item itemvalue="CMake Application._catkin_empty_exported_target" />
       <item itemvalue="CMake Application._drrobot_jaguarV2_player_generate_messages_check_deps_CustomSensor" />
       <item itemvalue="CMake Application._drrobot_jaguarV2_player_generate_messages_check_deps_IMUInfo" />
-      <item itemvalue="CMake Application._drrobot_jaguarV2_player_generate_messages_check_deps_MotorInfo" />
       <item itemvalue="CMake Application._drrobot_jaguarV2_player_generate_messages_check_deps_MotorInfoArray" />
+      <item itemvalue="CMake Application._drrobot_jaguarV2_player_generate_messages_check_deps_MotorInfo" />
       <item itemvalue="CMake Application._drrobot_jaguarV2_player_generate_messages_check_deps_PowerInfo" />
-      <item itemvalue="CMake Application._drrobot_jaguarV2_player_generate_messages_check_deps_Range" />
       <item itemvalue="CMake Application._drrobot_jaguarV2_player_generate_messages_check_deps_RangeArray" />
+      <item itemvalue="CMake Application._drrobot_jaguarV2_player_generate_messages_check_deps_Range" />
       <item itemvalue="CMake Application._drrobot_jaguarV2_player_generate_messages_check_deps_StandardSensor" />
+      <item itemvalue="CMake Application._fiducial_msgs_generate_messages_check_deps_FiducialArray" />
+      <item itemvalue="CMake Application._fiducial_msgs_generate_messages_check_deps_FiducialMapEntryArray" />
+      <item itemvalue="CMake Application._fiducial_msgs_generate_messages_check_deps_FiducialMapEntry" />
+      <item itemvalue="CMake Application._fiducial_msgs_generate_messages_check_deps_FiducialTransformArray" />
+      <item itemvalue="CMake Application._fiducial_msgs_generate_messages_check_deps_FiducialTransform" />
+      <item itemvalue="CMake Application._fiducial_msgs_generate_messages_check_deps_Fiducial" />
+      <item itemvalue="CMake Application._fiducial_msgs_generate_messages_check_deps_InitializeMap" />
+      <item itemvalue="CMake Application._fiducial_slam_generate_messages_check_deps_AddFiducial" />
+      <item itemvalue="CMake Application._fly_msgs_generate_messages_check_deps_Arc" />
+      <item itemvalue="CMake Application._fly_msgs_generate_messages_check_deps_Int" />
+      <item itemvalue="CMake Application._fly_msgs_generate_messages_check_deps_Line" />
+      <item itemvalue="CMake Application._fly_msgs_generate_messages_check_deps_Path" />
+      <item itemvalue="CMake Application._run_tests_aruco_detect" />
+      <item itemvalue="CMake Application._run_tests_aruco_detect_rostest" />
+      <item itemvalue="CMake Application._run_tests_aruco_detect_rostest_test_aruco_images.test" />
+      <item itemvalue="CMake Application._run_tests_fiducial_slam" />
+      <item itemvalue="CMake Application._run_tests_fiducial_slam_gtest" />
+      <item itemvalue="CMake Application._run_tests_fiducial_slam_gtest_transform_var_test" />
+      <item itemvalue="CMake Application._run_tests_fiducial_slam_rostest" />
+      <item itemvalue="CMake Application._run_tests_fiducial_slam_rostest_test_auto_init_403.test" />
+      <item itemvalue="CMake Application._run_tests_fiducial_slam_rostest_test_create_map_aruco.xml" />
+      <item itemvalue="CMake Application._run_tests_fiducial_slam_rostest_test_init_map_aruco.xml" />
+      <item itemvalue="CMake Application.actionlib_generate_messages_cpp" />
+      <item itemvalue="CMake Application.actionlib_generate_messages_eus" />
+      <item itemvalue="CMake Application.actionlib_generate_messages_lisp" />
+      <item itemvalue="CMake Application.actionlib_generate_messages_nodejs" />
+      <item itemvalue="CMake Application.actionlib_generate_messages_py" />
+      <item itemvalue="CMake Application.actionlib_msgs_generate_messages_cpp" />
+      <item itemvalue="CMake Application.actionlib_msgs_generate_messages_eus" />
+      <item itemvalue="CMake Application.actionlib_msgs_generate_messages_lisp" />
+      <item itemvalue="CMake Application.actionlib_msgs_generate_messages_nodejs" />
+      <item itemvalue="CMake Application.actionlib_msgs_generate_messages_py" />
+      <item itemvalue="CMake Application.aruco_detect" />
+      <item itemvalue="CMake Application.aruco_detect_gencfg" />
+      <item itemvalue="CMake Application.camera_trig" />
+      <item itemvalue="CMake Application.clean_test_results" />
+      <item itemvalue="CMake Application.clean_test_results_aruco_detect" />
+      <item itemvalue="CMake Application.clean_test_results_fiducial_slam" />
+      <item itemvalue="CMake Application.diagnostic_msgs_generate_messages_cpp" />
+      <item itemvalue="CMake Application.diagnostic_msgs_generate_messages_eus" />
+      <item itemvalue="CMake Application.diagnostic_msgs_generate_messages_lisp" />
+      <item itemvalue="CMake Application.diagnostic_msgs_generate_messages_nodejs" />
+      <item itemvalue="CMake Application.diagnostic_msgs_generate_messages_py" />
+      <item itemvalue="CMake Application.download_extra_data" />
+      <item itemvalue="CMake Application.doxygen" />
+      <item itemvalue="CMake Application.drive_path_follower" />
       <item itemvalue="CMake Application.drrobot_jaguarV2_player_gencpp" />
       <item itemvalue="CMake Application.drrobot_jaguarV2_player_generate_messages" />
       <item itemvalue="CMake Application.drrobot_jaguarV2_player_generate_messages_cpp" />
@@ -1401,50 +1424,12 @@
       <item itemvalue="CMake Application.drrobot_jaguarV2_player_gennodejs" />
       <item itemvalue="CMake Application.drrobot_jaguarV2_player_genpy" />
       <item itemvalue="CMake Application.drrobot_jaguarv2_player_node" />
-      <item itemvalue="CMake Application.tf_generate_messages_cpp" />
-      <item itemvalue="CMake Application.tf_generate_messages_eus" />
-      <item itemvalue="CMake Application.tf_generate_messages_lisp" />
-      <item itemvalue="CMake Application.tf_generate_messages_nodejs" />
-      <item itemvalue="CMake Application.tf_generate_messages_py" />
-      <item itemvalue="CMake Application.drive_path_follower" />
-      <item itemvalue="CMake Application.gazebo_msgs_generate_messages_cpp" />
-      <item itemvalue="CMake Application.gazebo_msgs_generate_messages_eus" />
-      <item itemvalue="CMake Application.gazebo_msgs_generate_messages_lisp" />
-      <item itemvalue="CMake Application.gazebo_msgs_generate_messages_nodejs" />
-      <item itemvalue="CMake Application.gazebo_msgs_generate_messages_py" />
-      <item itemvalue="CMake Application.sim_drive_path_follower" />
-      <item itemvalue="CMake Application.std_srvs_generate_messages_cpp" />
-      <item itemvalue="CMake Application.std_srvs_generate_messages_eus" />
-      <item itemvalue="CMake Application.std_srvs_generate_messages_lisp" />
-      <item itemvalue="CMake Application.std_srvs_generate_messages_nodejs" />
-      <item itemvalue="CMake Application.std_srvs_generate_messages_py" />
-      <item itemvalue="CMake Application._run_tests_aruco_detect" />
-      <item itemvalue="CMake Application._run_tests_aruco_detect_rostest" />
-      <item itemvalue="CMake Application._run_tests_aruco_detect_rostest_test_aruco_images.test" />
-      <item itemvalue="CMake Application.aruco_detect" />
-      <item itemvalue="CMake Application.aruco_detect_gencfg" />
-      <item itemvalue="CMake Application.clean_test_results_aruco_detect" />
       <item itemvalue="CMake Application.dynamic_reconfigure_gencfg" />
       <item itemvalue="CMake Application.dynamic_reconfigure_generate_messages_cpp" />
       <item itemvalue="CMake Application.dynamic_reconfigure_generate_messages_eus" />
       <item itemvalue="CMake Application.dynamic_reconfigure_generate_messages_lisp" />
       <item itemvalue="CMake Application.dynamic_reconfigure_generate_messages_nodejs" />
       <item itemvalue="CMake Application.dynamic_reconfigure_generate_messages_py" />
-      <item itemvalue="CMake Application.run_tests_aruco_detect" />
-      <item itemvalue="CMake Application.run_tests_aruco_detect_rostest" />
-      <item itemvalue="CMake Application.run_tests_aruco_detect_rostest_test_aruco_images.test" />
-      <item itemvalue="CMake Application.visualization_msgs_generate_messages_cpp" />
-      <item itemvalue="CMake Application.visualization_msgs_generate_messages_eus" />
-      <item itemvalue="CMake Application.visualization_msgs_generate_messages_lisp" />
-      <item itemvalue="CMake Application.visualization_msgs_generate_messages_nodejs" />
-      <item itemvalue="CMake Application.visualization_msgs_generate_messages_py" />
-      <item itemvalue="CMake Application._fiducial_msgs_generate_messages_check_deps_Fiducial" />
-      <item itemvalue="CMake Application._fiducial_msgs_generate_messages_check_deps_FiducialArray" />
-      <item itemvalue="CMake Application._fiducial_msgs_generate_messages_check_deps_FiducialMapEntry" />
-      <item itemvalue="CMake Application._fiducial_msgs_generate_messages_check_deps_FiducialMapEntryArray" />
-      <item itemvalue="CMake Application._fiducial_msgs_generate_messages_check_deps_FiducialTransform" />
-      <item itemvalue="CMake Application._fiducial_msgs_generate_messages_check_deps_FiducialTransformArray" />
-      <item itemvalue="CMake Application._fiducial_msgs_generate_messages_check_deps_InitializeMap" />
       <item itemvalue="CMake Application.fiducial_msgs_gencpp" />
       <item itemvalue="CMake Application.fiducial_msgs_generate_messages" />
       <item itemvalue="CMake Application.fiducial_msgs_generate_messages_cpp" />
@@ -1456,15 +1441,6 @@
       <item itemvalue="CMake Application.fiducial_msgs_genlisp" />
       <item itemvalue="CMake Application.fiducial_msgs_gennodejs" />
       <item itemvalue="CMake Application.fiducial_msgs_genpy" />
-      <item itemvalue="CMake Application._fiducial_slam_generate_messages_check_deps_AddFiducial" />
-      <item itemvalue="CMake Application._run_tests_fiducial_slam" />
-      <item itemvalue="CMake Application._run_tests_fiducial_slam_gtest" />
-      <item itemvalue="CMake Application._run_tests_fiducial_slam_gtest_transform_var_test" />
-      <item itemvalue="CMake Application._run_tests_fiducial_slam_rostest" />
-      <item itemvalue="CMake Application._run_tests_fiducial_slam_rostest_test_auto_init_403.test" />
-      <item itemvalue="CMake Application._run_tests_fiducial_slam_rostest_test_create_map_aruco.xml" />
-      <item itemvalue="CMake Application._run_tests_fiducial_slam_rostest_test_init_map_aruco.xml" />
-      <item itemvalue="CMake Application.clean_test_results_fiducial_slam" />
       <item itemvalue="CMake Application.fiducial_slam" />
       <item itemvalue="CMake Application.fiducial_slam_gencpp" />
       <item itemvalue="CMake Application.fiducial_slam_generate_messages" />
@@ -1477,35 +1453,37 @@
       <item itemvalue="CMake Application.fiducial_slam_genlisp" />
       <item itemvalue="CMake Application.fiducial_slam_gennodejs" />
       <item itemvalue="CMake Application.fiducial_slam_genpy" />
-      <item itemvalue="CMake Application.run_tests_fiducial_slam" />
-      <item itemvalue="CMake Application.run_tests_fiducial_slam_gtest" />
-      <item itemvalue="CMake Application.run_tests_fiducial_slam_gtest_transform_var_test" />
-      <item itemvalue="CMake Application.run_tests_fiducial_slam_rostest" />
-      <item itemvalue="CMake Application.run_tests_fiducial_slam_rostest_test_auto_init_403.test" />
-      <item itemvalue="CMake Application.run_tests_fiducial_slam_rostest_test_create_map_aruco.xml" />
-      <item itemvalue="CMake Application.run_tests_fiducial_slam_rostest_test_init_map_aruco.xml" />
-      <item itemvalue="CMake Application.actionlib_generate_messages_cpp" />
-      <item itemvalue="CMake Application.actionlib_generate_messages_eus" />
-      <item itemvalue="CMake Application.actionlib_generate_messages_lisp" />
-      <item itemvalue="CMake Application.actionlib_generate_messages_nodejs" />
-      <item itemvalue="CMake Application.actionlib_generate_messages_py" />
-      <item itemvalue="CMake Application.actionlib_msgs_generate_messages_cpp" />
-      <item itemvalue="CMake Application.actionlib_msgs_generate_messages_eus" />
-      <item itemvalue="CMake Application.actionlib_msgs_generate_messages_lisp" />
-      <item itemvalue="CMake Application.actionlib_msgs_generate_messages_nodejs" />
-      <item itemvalue="CMake Application.actionlib_msgs_generate_messages_py" />
-      <item itemvalue="CMake Application.camera_trig" />
-      <item itemvalue="CMake Application.diagnostic_msgs_generate_messages_cpp" />
-      <item itemvalue="CMake Application.diagnostic_msgs_generate_messages_eus" />
-      <item itemvalue="CMake Application.diagnostic_msgs_generate_messages_lisp" />
-      <item itemvalue="CMake Application.diagnostic_msgs_generate_messages_nodejs" />
-      <item itemvalue="CMake Application.diagnostic_msgs_generate_messages_py" />
+      <item itemvalue="CMake Application.fly_msgs_gencpp" />
+      <item itemvalue="CMake Application.fly_msgs_generate_messages" />
+      <item itemvalue="CMake Application.fly_msgs_generate_messages_cpp" />
+      <item itemvalue="CMake Application.fly_msgs_generate_messages_eus" />
+      <item itemvalue="CMake Application.fly_msgs_generate_messages_lisp" />
+      <item itemvalue="CMake Application.fly_msgs_generate_messages_nodejs" />
+      <item itemvalue="CMake Application.fly_msgs_generate_messages_py" />
+      <item itemvalue="CMake Application.fly_msgs_geneus" />
+      <item itemvalue="CMake Application.fly_msgs_genlisp" />
+      <item itemvalue="CMake Application.fly_msgs_gennodejs" />
+      <item itemvalue="CMake Application.fly_msgs_genpy" />
       <item itemvalue="CMake Application.fly_path_follower" />
+      <item itemvalue="CMake Application.gazebo_msgs_generate_messages_cpp" />
+      <item itemvalue="CMake Application.gazebo_msgs_generate_messages_eus" />
+      <item itemvalue="CMake Application.gazebo_msgs_generate_messages_lisp" />
+      <item itemvalue="CMake Application.gazebo_msgs_generate_messages_nodejs" />
+      <item itemvalue="CMake Application.gazebo_msgs_generate_messages_py" />
       <item itemvalue="CMake Application.geographic_msgs_generate_messages_cpp" />
       <item itemvalue="CMake Application.geographic_msgs_generate_messages_eus" />
       <item itemvalue="CMake Application.geographic_msgs_generate_messages_lisp" />
       <item itemvalue="CMake Application.geographic_msgs_generate_messages_nodejs" />
       <item itemvalue="CMake Application.geographic_msgs_generate_messages_py" />
+      <item itemvalue="CMake Application.geometry_msgs_generate_messages_cpp" />
+      <item itemvalue="CMake Application.geometry_msgs_generate_messages_eus" />
+      <item itemvalue="CMake Application.geometry_msgs_generate_messages_lisp" />
+      <item itemvalue="CMake Application.geometry_msgs_generate_messages_nodejs" />
+      <item itemvalue="CMake Application.geometry_msgs_generate_messages_py" />
+      <item itemvalue="CMake Application.gmock" />
+      <item itemvalue="CMake Application.gmock_main" />
+      <item itemvalue="CMake Application.gtest" />
+      <item itemvalue="CMake Application.gtest_main" />
       <item itemvalue="CMake Application.land" />
       <item itemvalue="CMake Application.mavros_msgs_generate_messages_cpp" />
       <item itemvalue="CMake Application.mavros_msgs_generate_messages_eus" />
@@ -1527,19 +1505,46 @@
       <item itemvalue="CMake Application.rosgraph_msgs_generate_messages_lisp" />
       <item itemvalue="CMake Application.rosgraph_msgs_generate_messages_nodejs" />
       <item itemvalue="CMake Application.rosgraph_msgs_generate_messages_py" />
+      <item itemvalue="CMake Application.run_tests" />
+      <item itemvalue="CMake Application.run_tests_aruco_detect" />
+      <item itemvalue="CMake Application.run_tests_aruco_detect_rostest" />
+      <item itemvalue="CMake Application.run_tests_aruco_detect_rostest_test_aruco_images.test" />
+      <item itemvalue="CMake Application.run_tests_fiducial_slam" />
+      <item itemvalue="CMake Application.run_tests_fiducial_slam_gtest" />
+      <item itemvalue="CMake Application.run_tests_fiducial_slam_gtest_transform_var_test" />
+      <item itemvalue="CMake Application.run_tests_fiducial_slam_rostest" />
+      <item itemvalue="CMake Application.run_tests_fiducial_slam_rostest_test_auto_init_403.test" />
+      <item itemvalue="CMake Application.run_tests_fiducial_slam_rostest_test_create_map_aruco.xml" />
+      <item itemvalue="CMake Application.run_tests_fiducial_slam_rostest_test_init_map_aruco.xml" />
       <item itemvalue="CMake Application.sensor_msgs_generate_messages_cpp" />
       <item itemvalue="CMake Application.sensor_msgs_generate_messages_eus" />
       <item itemvalue="CMake Application.sensor_msgs_generate_messages_lisp" />
       <item itemvalue="CMake Application.sensor_msgs_generate_messages_nodejs" />
       <item itemvalue="CMake Application.sensor_msgs_generate_messages_py" />
       <item itemvalue="CMake Application.sim_camera_trig" />
+      <item itemvalue="CMake Application.sim_drive_path_follower" />
       <item itemvalue="CMake Application.sim_fly_path_follower" />
-      <item itemvalue="CMake Application.tester" />
+      <item itemvalue="CMake Application.std_msgs_generate_messages_cpp" />
+      <item itemvalue="CMake Application.std_msgs_generate_messages_eus" />
+      <item itemvalue="CMake Application.std_msgs_generate_messages_lisp" />
+      <item itemvalue="CMake Application.std_msgs_generate_messages_nodejs" />
+      <item itemvalue="CMake Application.std_msgs_generate_messages_py" />
+      <item itemvalue="CMake Application.std_srvs_generate_messages_cpp" />
+      <item itemvalue="CMake Application.std_srvs_generate_messages_eus" />
+      <item itemvalue="CMake Application.std_srvs_generate_messages_lisp" />
+      <item itemvalue="CMake Application.std_srvs_generate_messages_nodejs" />
+      <item itemvalue="CMake Application.std_srvs_generate_messages_py" />
+      <item itemvalue="CMake Application.tests" />
       <item itemvalue="CMake Application.tf2_msgs_generate_messages_cpp" />
       <item itemvalue="CMake Application.tf2_msgs_generate_messages_eus" />
       <item itemvalue="CMake Application.tf2_msgs_generate_messages_lisp" />
       <item itemvalue="CMake Application.tf2_msgs_generate_messages_nodejs" />
       <item itemvalue="CMake Application.tf2_msgs_generate_messages_py" />
+      <item itemvalue="CMake Application.tf_generate_messages_cpp" />
+      <item itemvalue="CMake Application.tf_generate_messages_eus" />
+      <item itemvalue="CMake Application.tf_generate_messages_lisp" />
+      <item itemvalue="CMake Application.tf_generate_messages_nodejs" />
+      <item itemvalue="CMake Application.tf_generate_messages_py" />
       <item itemvalue="CMake Application.trajectory_msgs_generate_messages_cpp" />
       <item itemvalue="CMake Application.trajectory_msgs_generate_messages_eus" />
       <item itemvalue="CMake Application.trajectory_msgs_generate_messages_lisp" />
@@ -1550,35 +1555,18 @@
       <item itemvalue="CMake Application.uuid_msgs_generate_messages_lisp" />
       <item itemvalue="CMake Application.uuid_msgs_generate_messages_nodejs" />
       <item itemvalue="CMake Application.uuid_msgs_generate_messages_py" />
-      <item itemvalue="CMake Application._fly_msgs_generate_messages_check_deps_Arc" />
-      <item itemvalue="CMake Application._fly_msgs_generate_messages_check_deps_Int" />
-      <item itemvalue="CMake Application._fly_msgs_generate_messages_check_deps_Line" />
-      <item itemvalue="CMake Application._fly_msgs_generate_messages_check_deps_Path" />
-      <item itemvalue="CMake Application.fly_msgs_gencpp" />
-      <item itemvalue="CMake Application.fly_msgs_generate_messages" />
-      <item itemvalue="CMake Application.fly_msgs_generate_messages_cpp" />
-      <item itemvalue="CMake Application.fly_msgs_generate_messages_eus" />
-      <item itemvalue="CMake Application.fly_msgs_generate_messages_lisp" />
-      <item itemvalue="CMake Application.fly_msgs_generate_messages_nodejs" />
-      <item itemvalue="CMake Application.fly_msgs_generate_messages_py" />
-      <item itemvalue="CMake Application.fly_msgs_geneus" />
-      <item itemvalue="CMake Application.fly_msgs_genlisp" />
-      <item itemvalue="CMake Application.fly_msgs_gennodejs" />
-      <item itemvalue="CMake Application.fly_msgs_genpy" />
-      <item itemvalue="CMake Application.geometry_msgs_generate_messages_cpp" />
-      <item itemvalue="CMake Application.geometry_msgs_generate_messages_eus" />
-      <item itemvalue="CMake Application.geometry_msgs_generate_messages_lisp" />
-      <item itemvalue="CMake Application.geometry_msgs_generate_messages_nodejs" />
-      <item itemvalue="CMake Application.geometry_msgs_generate_messages_py" />
-      <item itemvalue="CMake Application.std_msgs_generate_messages_cpp" />
-      <item itemvalue="CMake Application.std_msgs_generate_messages_eus" />
-      <item itemvalue="CMake Application.std_msgs_generate_messages_lisp" />
-      <item itemvalue="CMake Application.std_msgs_generate_messages_nodejs" />
-      <item itemvalue="CMake Application.std_msgs_generate_messages_py" />
-      <item itemvalue="CMake Application.gmock" />
-      <item itemvalue="CMake Application.gmock_main" />
-      <item itemvalue="CMake Application.gtest" />
-      <item itemvalue="CMake Application.gtest_main" />
+      <item itemvalue="CMake Application.visualization_msgs_generate_messages_cpp" />
+      <item itemvalue="CMake Application.visualization_msgs_generate_messages_eus" />
+      <item itemvalue="CMake Application.visualization_msgs_generate_messages_lisp" />
+      <item itemvalue="CMake Application.visualization_msgs_generate_messages_nodejs" />
+      <item itemvalue="CMake Application.visualization_msgs_generate_messages_py" />
+      <item itemvalue="CMake Application.vision_msgs_generate_messages_cpp" />
+      <item itemvalue="CMake Application.vision_msgs_generate_messages_eus" />
+      <item itemvalue="CMake Application.vision_msgs_generate_messages_lisp" />
+      <item itemvalue="CMake Application.vision_msgs_generate_messages_nodejs" />
+      <item itemvalue="CMake Application.vision_msgs_generate_messages_py" />
+      <item itemvalue="CMake Application.test_global_path" />
+      <item itemvalue="CMake Application.test_local_path" />
       <item itemvalue="CTest Application.All CTest" />
       <item itemvalue="Google Test.aruco_images_test" />
       <item itemvalue="Google Test.auto_init_403_test" />
@@ -1598,6 +1586,9 @@
       <workItem from="1625899495169" duration="11386000" />
       <workItem from="1626003612178" duration="8233000" />
       <workItem from="1628785259817" duration="5000" />
+      <workItem from="1629556574753" duration="533000" />
+      <workItem from="1630442423774" duration="1212000" />
+      <workItem from="1630444005628" duration="9238000" />
     </task>
     <servers />
   </component>

@@ -1,12 +1,12 @@
 simulation : 0
 
-coordinate_file_name: coordinates.txt
+coordinate_file_name: local_coordinates.txt
 image_folder_name: /home
 
 drone:
   look_ahead_distance: 3
   cruise_velocity: 3
-  cruise_height: 10
+  cruise_height: 5
   Pz_gain: 0.8
   Dz_gain: -0.05
   Pa_gain: 4
@@ -14,8 +14,8 @@ drone:
   Pp_gain: 1
   Dp_gain: 0.01
   Ip_gain: 0.05
-  descent_rate: 0.5
-  max_position_control_velocity: 2
+  descent_rate: 0.25
+  max_position_control_velocity: 0.5
   integration_limit: 10
   max_distance_to_path: 30
   land_type: 1
